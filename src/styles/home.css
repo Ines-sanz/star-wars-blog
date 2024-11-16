@@ -1,0 +1,37 @@
+.myCharacters{
+   height: auto;
+   background-repeat: no-repeat;
+   background-size: cover;
+   padding-top: 6%;
+   padding-bottom: 6%;
+  background-position: center bottom;
+}
+
+.horizontal-scrollable {
+    overflow-x: auto; 
+    white-space: nowrap; 
+    padding: 10px; 
+}
+
+.horizontal-scrollable .row {
+    flex-wrap: nowrap; 
+    display: flex;
+}
+
+.horizontal-scrollable::-webkit-scrollbar {
+    height: 8px; 
+}
+
+.horizontal-scrollable::-webkit-scrollbar-track {
+    background: #363035ce; 
+    border-radius: 10px;
+}
+
+.horizontal-scrollable::-webkit-scrollbar-thumb {
+    background: #868286; 
+    border-radius: 10px; 
+}
+
+.horizontal-scrollable::-webkit-scrollbar-thumb:hover {
+    background: #dfdcdc;
+}
