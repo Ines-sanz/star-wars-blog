@@ -1,11 +1,18 @@
-import React from "react";
-import "../../styles/character.css";
+import React, { useContext } from "react";
 import "../../styles/index.css";
+import { Navigate, useNavigate } from "react-router";
+import { Context } from "../store/appContext";
 
 export const SmChar = (props) => {
+const {store, actions} = useContext(Context)
+const navigate = useNavigate();
+const handleLink = () => {
+  navigate(`/details/${props.type}/${props.uid}`)
+}
+
   return (
     <div className="col-10 col-md-4 col-lg-3  m-3">
-      <div className="p-3 glass">
+      <div className="p-3 glass" onClick={handleLink}>
         <div>
           <figure className="myCard">
             <img className="img-fluid" src={props.img} alt={props.name} />

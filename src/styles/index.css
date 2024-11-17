@@ -69,3 +69,19 @@ body {
 .glass:hover .cardTitle {
   color: white;
 }
+
+.divider{
+margin-bottom: 22px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.arrow{
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.detailSubtitle{
+  text-transform: uppercase;
+  color: white;
+  font-size: 14px;
+  letter-spacing: 2px;
+}

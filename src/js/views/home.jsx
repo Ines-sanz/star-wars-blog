@@ -13,11 +13,13 @@ export const Home = () => {
 	  <div className="horizontal-scrollable">
 		<div className="row flex-nowrap">
 			<div className="col-1 col-md-4 col-lg-3  m-3"></div>
-		  {store.people?.map((el) => (
+		  {store.people?.map((person) => (
 			  <SmChar
-				key={el.uid}
-				img={`https://starwars-visualguide.com/assets/img/characters/${el.uid}.jpg`}
-				name={el.name}
+				key={person.uid}
+				img={`https://starwars-visualguide.com/assets/img/characters/${person.uid}.jpg`}
+				name={person.name}
+				type={'people'}
+				uid={person.uid}
 			  />
 		  
 		  ))}
