@@ -14,7 +14,6 @@
     text-transform: uppercase;
     letter-spacing: 2px;
   font-family: "Funnel Display", sans-serif;
-
     color: white;
 }
 
@@ -30,7 +29,7 @@
   border: solid 1px rgba(255, 255, 255, 0.3);
 }
 
-.detailsInfo p{
+.detailsInfo p, .detailsPlusInfo p{
     text-transform:uppercase;
     font-size: 18px;
     color: white;
@@ -46,4 +45,16 @@
 .gender{
   font-size: 18px;
   color: white;
+}
+
+.detailsPlusInfo{
+  padding-top: 5%;
+  padding-left: 3%;
+}
+.peopleIcon{
+  width: 38px;
+  height: auto;
+  margin-top: -16px;
+  margin-left: -10px;
+  margin-right: 3px;
 }

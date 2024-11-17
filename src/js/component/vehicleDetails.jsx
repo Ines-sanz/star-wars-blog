@@ -2,7 +2,7 @@ import React from "react";
 import starship from "../../img/starship-icon.png";
 import vehicle from "../../img/vehicle-icon.png";
 
-export const PeopleDetails = (props) => {
+export const VehicleDetails = () => {
   return (
     <div className="col-12 col-lg-10 justify-content-center">
       <div className="p-3 glass row g-0 justify-content-center">
@@ -10,89 +10,92 @@ export const PeopleDetails = (props) => {
           <img
             className="img-fluid detailImg"
             src={props.img}
-            alt={props.name}
+            
           />
         </figure>
         <div className="col-12 col-lg-8">
           <div className="detailTitle col-12 col-lg-11 d-flex justify-content-between px-4 mt-2">
-            <h3>{props.name}</h3>
+            <h3>name</h3>
             <span className="fa-solid fa-star cardIcon"></span>
           </div>
           <div className="glassDetail col-12 col-lg-11 ps-4 p-3">
             <div className="d-flex align-items-center">
               <div className="  col-11 d-flex align-items-end">
-                <p className="detailSubtitle ">Born in</p>
+                <p className="detailSubtitle ">Model</p>
                 <div className="divider  col-2 col-lg-6"></div>
-                <p className="birthYear">{props.birth_year}</p>
-              </div>
-              <div className="gender col-1 ms-2 text-center">
-                {props.gender === "n/a" && (
-                  <span className="fa-solid fa-genderless"></span>
-                )}
-                {props.gender === "male" && (
-                  <span className="fa-solid fa-mars"></span>
-                )}
-                {props.gender === "female" && (
-                  <span className="fa-solid fa-venus"></span>
-                )}
+                <p className="birthYear">model</p>
               </div>
             </div>
             <div className=" row detailsInfo">
               <div className="col-12 col-lg-5">
-                <p>
+              <p>
                   <span className="detailSubtitle">
                     <span className="fa-solid fa-caret-right arrow"></span>{" "}
-                    Height:{" "}
+                   Class:{" "}
                   </span>
-                  {props.height}
+                  class
                 </p>
                 <p>
                   <span className="detailSubtitle">
                     <span className="fa-solid fa-caret-right arrow"></span>{" "}
-                    Mass:{" "}
+                   Manufactured{" "}
+                  </span>
+                  manufactured
+                </p>
+                <p>
+                  <span className="detailSubtitle">
+                    <span className="fa-solid fa-caret-right arrow"></span>{" "}
+                    Cost:{" "}
                   </span>{" "}
-                  {props.mass}
+                  cost
                 </p>
               </div>
               <div className="col-12 col-lg-7">
                 <p>
                   <span className="detailSubtitle">
-                    <span className="fa-solid fa-caret-right arrow"></span> Skin
-                    color:{" "}
+                    <span className="fa-solid fa-caret-right arrow"></span> Length:{" "}
                   </span>
-                  {props.skin_color}
+                  length
                 </p>
                 <p>
                   <span className="detailSubtitle">
-                    <span className="fa-solid fa-caret-right arrow"></span> Eye
-                    color:{" "}
+                    <span className="fa-solid fa-caret-right arrow"></span> Cargo:{" "}
                   </span>
-                  {props.eye_color}
+                 cargo
                 </p>
-                <p>
-                  <span className="detailSubtitle">
-                    <span className="fa-solid fa-caret-right arrow"></span> Hair
-                    color:{" "}
-                  </span>
-                  {props.hair_color}
-                </p>
+              
               </div>
             </div>
           </div>{" "}
           <div className="row detailsPlusInfo">
             <div className=" col-5">
-              <p>
-                  <span className="fa-solid fa-caret-right arrow me-1"></span>
-                Human
-              </p>
-              <p>
-              <span className="fa-solid fa-caret-right arrow me-1"></span>{props.homeworld}
-              </p>
+            <p>
+                  <span className="detailSubtitle">
+                    <span className="fa-solid fa-caret-right arrow"></span> Max speed:{" "}
+                  </span>
+                  speed
+                </p>
+                <p>
+                  <span className="detailSubtitle">
+                    <span className="fa-solid fa-caret-right arrow"></span> Consumables:{" "}
+                  </span>
+                  consumables
+                </p>
+                
             </div>
             <div className="col-7">
-              <p><img className="peopleIcon" src={vehicle} alt="vehicle" />No vehicle</p>
-              <p><img className="peopleIcon" src={starship} alt="starship" />No starships</p>
-            </div>
+            <p>
+                  <span className="detailSubtitle">
+                    <span className="fa-solid fa-caret-right arrow"></span> Crew:{" "}
+                  </span>
+                crew
+                </p>
+                <p>
+                  <span className="detailSubtitle">
+                    <span className="fa-solid fa-caret-right arrow"></span> Passengers:{" "}
+                  </span>
+                 passengers
+                </p></div>
           </div>
         </div>
       </div>

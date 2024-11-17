@@ -5,6 +5,7 @@ import peopleBg from "../../img/bg-char.png";
 import vehicBg from "../../img/bg-vehic.png";
 import planetBg from "../../img/bg-planet.png";
 import { PeopleDetails } from "../component/peopleDetails.jsx";
+import { VehiclesDetails } from "../component/vehicleDetails.jsx";
 
 import "../../styles/detail.css"
 
@@ -40,8 +41,23 @@ export const Details = () => {
       eye_color={store.details?.properties?.eye_color}
       birth_year={store.details?.properties?.birth_year}
       gender={store.details?.properties?.gender}
+      homeworld={store.details?.properties?.homeworld}
       />}
-      {type === 'vehicles' && <>VehicDetails</>}
+      {type === 'vehicles' && <VehiclesDetails
+      key= {uid}
+      img={`https://starwars-visualguide.com/assets/img/vehicles/${uid}.jpg`}
+      name={store.details.properties?.name}
+      model={store.details.properties?.model}
+      vehicle_class={store.details.properties?.vehicle_class}
+      manufactured={store.details.properties?.manufactured}
+      cost_in_credits={store.details.properties?.cost_in_credits}
+      length={store.details.properties?.length}
+      crew={store.details.properties?.crew}
+      passengers={store.details.properties?.passengers}
+      max_atmosphering_speed={store.details.properties?.max_atmosphering_speed}
+      cargo_capacity={store.details.properties?.cargo_capacity}
+      consumables={store.details.properties?.consumables}
+      />}
       {type === 'planets' && <>PlanetDetails</>}
     </div>
   );
