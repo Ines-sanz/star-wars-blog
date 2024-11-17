@@ -5,13 +5,13 @@ const getState = ({ getStore, getActions, setStore }) => {
       people: [],
     },
     actions: {
-      loadCharacters: async () => {
+      loadInfo: async (type) => {
         try {
-          const resp = await fetch(getStore().url + "/people");
+          const resp = await fetch(getStore().url + `/${type}`);
           if (!resp.ok) throw new Error("Error loading data");
           const data = await resp.json();
           console.log(data);
-          setStore({ people: data.results });
+          setStore({ [type]: data.results });
         } catch (error) {
           console.error(error);
         }
@@ -28,6 +28,8 @@ const getState = ({ getStore, getActions, setStore }) => {
           console.error(error);
         }
       },
+
+      clearSingle: ()=>setStore({single: {}})
     },
   };
 };

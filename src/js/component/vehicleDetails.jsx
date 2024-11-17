@@ -2,7 +2,7 @@ import React from "react";
 import starship from "../../img/starship-icon.png";
 import vehicle from "../../img/vehicle-icon.png";
 
-export const VehicleDetails = () => {
+export const VehicleDetails = (prop) => {
   return (
     <div className="col-12 col-lg-10 justify-content-center">
       <div className="p-3 glass row g-0 justify-content-center">
