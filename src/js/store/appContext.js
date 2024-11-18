@@ -25,6 +25,7 @@ const injectContext = PassedComponent => {
 			// Llamadas a las acciones al montar el componente
 			state.actions.loadInfo("people");
 			state.actions.loadInfo("vehicles");
+			state.actions.loadInfo("starships");
 			state.actions.loadInfo("planets");
 		  }, []); 
 

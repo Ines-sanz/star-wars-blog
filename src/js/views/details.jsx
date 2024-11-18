@@ -6,6 +6,7 @@ import vehicBg from "../../img/bg-vehic.png";
 import planetBg from "../../img/bg-planet.png";
 import { PeopleDetails } from "../component/peopleDetails.jsx";
 import { VehiclesDetails } from "../component/vehicleDetails.jsx";
+import { StarshipsDetails } from "../component/starshipsDetails.jsx";
 
 import "../../styles/detail.css"
 
@@ -13,13 +14,19 @@ export const Details = () => {
   const { type, uid } = useParams();
   const { store, actions } = useContext(Context);
 
-  useEffect(() => (
-    actions.getSingle(type, uid)
-  ), [])
+  useEffect(() => {
+    actions.clearSingle(); 
+    actions.getSingle(type, uid);
+}, [type, uid]);
+
+if (!store.details || !store.details.properties) {
+  return <div>Loading...</div>;
+}
 
   const backgroundImages = {
     people: peopleBg,
     vehicles: vehicBg,
+    starships: vehicBg,
     planets: planetBg
   };
 
@@ -32,6 +39,7 @@ export const Details = () => {
     >
       {type === 'people' && <PeopleDetails 
       name={store.details?.properties?.name}
+      url={store.details?.properties?.url}
       key= {uid}
       img={`https://starwars-visualguide.com/assets/img/characters/${uid}.jpg`}
       height={store.details?.properties?.height}
@@ -43,13 +51,14 @@ export const Details = () => {
       gender={store.details?.properties?.gender}
       homeworld={store.details?.properties?.homeworld}
       />}
+      
       {type === 'vehicles' && <VehiclesDetails
       key= {uid}
       img={`https://starwars-visualguide.com/assets/img/vehicles/${uid}.jpg`}
       name={store.details.properties?.name}
       model={store.details.properties?.model}
       vehicle_class={store.details.properties?.vehicle_class}
-      manufactured={store.details.properties?.manufactured}
+      manufacturer={store.details.properties?.manufacturer}
       cost_in_credits={store.details.properties?.cost_in_credits}
       length={store.details.properties?.length}
       crew={store.details.properties?.crew}
@@ -57,6 +66,24 @@ export const Details = () => {
       max_atmosphering_speed={store.details.properties?.max_atmosphering_speed}
       cargo_capacity={store.details.properties?.cargo_capacity}
       consumables={store.details.properties?.consumables}
+      />}
+
+{type === 'starships' && <StarshipsDetails
+      key= {uid}
+      img={`https://starwars-visualguide.com/assets/img/starships/${uid}.jpg`}
+      name={store.details.properties?.name}
+      model={store.details.properties?.model}
+      starship_class={store.details.properties?.starship_class}
+      manufacturer={store.details.properties?.manufacturer}
+      cost_in_credits={store.details.properties?.cost_in_credits}
+      length={store.details.properties?.length}
+      crew={store.details.properties?.crew}
+      passengers={store.details.properties?.passengers}
+      max_atmosphering_speed={store.details.properties?.max_atmosphering_speed}
+      cargo_capacity={store.details.properties?.cargo_capacity}
+      consumables={store.details.properties?.consumables}
+      hyperdrive_rating={store.details.properties?.hyperdrive_rating}
+      MGLT={store.details.properties?.MGLT}
       />}
       {type === 'planets' && <>PlanetDetails</>}
     </div>

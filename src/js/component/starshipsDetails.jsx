@@ -1,20 +1,20 @@
 import React from "react";
 import "../../styles/detail.css";
-import vehicle from "../../img/vehicle-icon.png";
+import starship from "../../img/starship-icon.png";
 import credits from "../../img/credits-icon.png";
 
-export const VehiclesDetails = (props) => {
+export const StarshipsDetails = (props) => {
   return (
     <div className="col-12 col-lg-10 justify-content-center">
-      <div className="p-3 glass row g-0 justify-content-center">
-        <figure className="col-10 col-lg-4">
+      <div className="p-3 glass row g-0 justify-content-center d-flex">
+        <figure className="col-10 col-xl-4">
           <img
             className="img-fluid detailImg"
             src={props.img}
             alt={props.name}
           />
         </figure>
-        <div className="col-12 col-lg-7">
+        <div className="col-12 col-xl-7 ">
           <div className="detailTitle col-12 col-lg-11 d-flex justify-content-between px-4 mt-2">
             <h3>{props.name}</h3>
             <span className="fa-solid fa-star cardIcon"></span>
@@ -22,11 +22,11 @@ export const VehiclesDetails = (props) => {
           <div className="glassDetail col-12 col-lg-11 ps-4 p-3">
             <img
               className="peopleIcon vehicleIcon"
-              src={vehicle}
-              alt="vehicle"
+              src={starship}
+              alt="starship"
             />
             <div className="d-flex align-items-center">
-              <p className="birthYear text-uppercase">{props.model}</p>
+              <p className=" col-11 birthYear text-uppercase">{props.model}</p>
             </div>
             <div className="row d-flex">
               <p className="detailSubtitleSmall small  ">
@@ -34,15 +34,13 @@ export const VehiclesDetails = (props) => {
               </p>
             </div>
             <div className=" row detailsInfo">
-              <div className="col-12 col-lg-5">
-                <p>
-                  <span className="detailSubtitleSmall">
+              <div className="col-12 col-md-12 col-xl-6">
+                <span className="detailSubtitleSmall">
                     <span className="fa-solid fa-caret-right arrow"></span>{" "}
-                  </span>
-                  {props.vehicle_class}
-                </p>
+                    {props.starship_class}
+                </span>
               </div>
-              <div className="col-12 col-lg-7">
+              <div className="col-12 col-md-12 col-xl-6">
                 <p>
                   <span className="detailSubtitleSmall">
                     <span className="fa-solid fa-caret-right arrow"></span>{" "}
@@ -59,7 +57,7 @@ export const VehiclesDetails = (props) => {
           </div>{" "}
         </div>
         <div className="row detailsPlusInfo">
-          <div className=" col-12 col-md-4 col-lg-3">
+          <div className=" col-12 col-md-6 col-xl-3">
             <p>
               <span className="detailSubtitleSmall">
                 <span className="fa-solid fa-caret-right arrow"></span> Crew:{" "}
@@ -74,7 +72,7 @@ export const VehiclesDetails = (props) => {
               {props.passengers}
             </p>
           </div>
-          <div className="col-12 col-md-5 col-lg-4">
+          <div className="col-12 col-md-6 col-xl-3">
             <p>
               <span className="detailSubtitleSmall">
                 <span className="fa-solid fa-caret-right arrow"></span> Max
@@ -90,8 +88,22 @@ export const VehiclesDetails = (props) => {
               {props.consumables}
             </p>
           </div>
-
-          <div className="col-12 col-md-7 col-lg-5">
+          <div className=" col-12 col-md-6 col-xl-3">
+            <p>
+              <span className="detailSubtitleSmall">
+                <span className="fa-solid fa-caret-right arrow"></span> Hyperdrive Rating:{" "}
+              </span>
+              {props.hyperdrive_rating}
+            </p>
+            <p>
+              <span className="detailSubtitleSmall">
+                <span className="fa-solid fa-caret-right arrow"></span>{" "}
+                MGLT:{" "}
+              </span>
+              {props.MGLT}
+            </p>
+          </div>
+          <div className="col-12 col-md-6 col-xl-3">
             <p>
               <span className="detailSubtitleSmall">
                 <span className="fa-solid fa-caret-right arrow"></span> Length:{" "}

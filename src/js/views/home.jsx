@@ -12,9 +12,20 @@ export const Home = () => {
 		actions.clearSingle()
 	},[])
   
+	const isValidImage = (url) => {
+		try {
+		  const img = new Image();
+		  img.src = url;
+		  return img.complete && img.naturalWidth !== 0;
+		} catch (error) {
+		  console.error("Invalid image URL:", url);
+		  return false;
+		}
+	  };
+
 	return (
 		<>
-	  <section className="myCharacters" style={{backgroundImage: `url(${bgTop})`}} >
+	  <section className="myBg" style={{backgroundImage: `url(${bgTop})`}} >
 	  <div className="horizontal-scrollable">
 		<div className="row flex-nowrap">
 			<div className="col-1 col-md-4 col-lg-3  m-3"></div>
@@ -31,7 +42,8 @@ export const Home = () => {
 		</div>
 	  </div>
 	  </section>
-	  <div className="horizontal-scrollable" style={{backgroundImage: `url(${bgBottom})`}} >
+	  <section  className="myBg" style={{backgroundImage: `url(${bgBottom})`}} >
+	  <div className="horizontal-scrollable mb-5"  >
 	  <div className="row flex-nowrap">
 			<div className="col-1 col-md-4 col-lg-3  m-3"></div>
 		  {store.vehicles?.map((vehicles) => (
@@ -45,7 +57,26 @@ export const Home = () => {
 		  
 		  ))}
 		</div></div>
-	
+		<div className="horizontal-scrollable my-5" >
+		<div className="row flex-nowrap">
+  <div className="col-1 col-md-4 col-lg-3 m-3"></div>
+  {store.starships
+    ?.filter((starship) => {
+      const imageUrl = `https://starwars-visualguide.com/assets/img/starships/${starship.uid}.jpg`;
+      return starship.uid && starship.name && isValidImage(imageUrl); 
+    })
+    .map((starship) => (
+      <SmChar
+        key={starship.uid}
+        img={`https://starwars-visualguide.com/assets/img/starships/${starship.uid}.jpg`}
+        name={starship.name}
+        type={"starships"}
+        uid={starship.uid}
+      />
+    ))}
+</div>
+		</div>
+	</section>
 	</>
 	);
   };

@@ -1,4 +1,4 @@
-.myCharacters{
+.myBg{
    height: auto;
    background-repeat: no-repeat;
    background-size: cover;
@@ -23,12 +23,12 @@
 }
 
 .horizontal-scrollable::-webkit-scrollbar-track {
-    background: #363035ce; 
+    background: #3630355b; 
     border-radius: 10px;
 }
 
 .horizontal-scrollable::-webkit-scrollbar-thumb {
-    background: #868286; 
+    background: #86828681; 
     border-radius: 10px; 
 }
 

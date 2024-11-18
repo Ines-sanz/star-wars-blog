@@ -1,8 +1,43 @@
-import React from "react";
+import React, { useContext } from "react";
 import starship from "../../img/starship-icon.png";
 import vehicle from "../../img/vehicle-icon.png";
+import { Context } from "../store/appContext";
+import { useState, useEffect } from "react";
 
 export const PeopleDetails = (props) => {
+  const { store, actions } = useContext(Context);
+  const [planetName, setPlanetName] = useState("");
+  const [vehiclesAndStarships, setVehicStarships] = useState({
+    vehicles: [],
+    starships: [],
+  });
+  const [isLoading, setIsLoading] = useState(true);
+
+  const fetchPlanet = async () => {
+    if (props.homeworld) {
+      const name = await actions.getPlanet(props.homeworld);
+      setPlanetName(name);
+    }
+  };
+
+  const fetchVehicStarships = async () => {
+    setIsLoading(true);
+    if (props.url) {
+      const result = await actions.getCharVehiStarships(props.url);
+      console.log("Vehicles and Starships Result:", result);
+      setVehicStarships(result);
+    }
+    setIsLoading(false);
+  };
+
+  useEffect(() => {
+    fetchPlanet();
+  }, [props.homeworld]);
+
+  useEffect(() => {
+    fetchVehicStarships();
+  }, [props.url]);
+
   return (
     <div className="col-12 col-lg-10 justify-content-center">
       <div className="p-3 glass row g-0 justify-content-center">
@@ -82,16 +117,41 @@ export const PeopleDetails = (props) => {
           <div className="row detailsPlusInfo">
             <div className=" col-5">
               <p>
-                  <span className="fa-solid fa-caret-right arrow me-1"></span>
+                <span className="fa-solid fa-caret-right arrow me-1"></span>
                 Human
               </p>
               <p>
-              <span className="fa-solid fa-caret-right arrow me-1"></span>{props.homeworld}
+                <span className="fa-solid fa-caret-right arrow me-1"></span>
+                {planetName || (
+                  <span className="detailsPlusInfo">Loading...</span>
+                )}
               </p>
             </div>
             <div className="col-7">
-              <p><img className="peopleIcon" src={vehicle} alt="vehicle" />No vehicle</p>
-              <p><img className="peopleIcon" src={starship} alt="starship" />No starships</p>
+              <p>
+                <img className="peopleIcon" src={vehicle} alt="vehicle" />
+                {(() => {
+                  if (isLoading) {
+                    return "Loading...";
+                  }
+                  if (vehiclesAndStarships.vehicles.length > 0) {
+                    return vehiclesAndStarships.vehicles.join(", ");
+                  }
+                  return "No vehicles";
+                })()}
+              </p>
+              <p>
+                <img className="peopleIcon" src={starship} alt="starship" />
+                {(() => {
+                  if (isLoading) {
+                    return "Loading...";
+                  }
+                  if (vehiclesAndStarships.starships.length > 0) {
+                    return vehiclesAndStarships.starships.join(", ");
+                  }
+                  return "No starships";
+                })()}
+              </p>
             </div>
           </div>
         </div>
