@@ -1,0 +1,62 @@
+.homeIcon{
+    margin-top: 10px;
+width: 40px;
+height: 40px;
+margin-left: 20px;
+opacity: 0.4;
+}
+
+.homeIcon:hover{
+    opacity: 1;
+    transform: scale(1.1);
+}
+.navbarLogo{
+    position: absolute;
+    top: 20px;
+    left: calc(50% - 150px);
+    width: 300px;
+    height: auto;
+}
+
+.myButton{
+    margin-right: 20px;
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.3),
+      rgba(255, 255, 255, 0.1)
+    );
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: solid 1px rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+    color: rgba(255, 255, 255, 0.637);
+}
+
+.myDropdown{
+    width: 230px;
+    margin-left: -170px;
+    overflow-x: hidden;
+    background:transparent;
+    color: white !important;
+text-transform: uppercase;
+border: 1px rgba(255, 255, 255, 0.62) solid;
+}
+.btn-check:focus+.btn, .btn:focus{
+    outline: none;
+    box-shadow: none;
+    color: white;
+}
+.dropdown-item{
+    color: white;
+}
+.dropdown-item:hover{
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.3),
+      rgba(255, 255, 255, 0.1)
+    );
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: solid 1px rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+}

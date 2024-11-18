@@ -86,3 +86,28 @@
   font-size: 12px;
   letter-spacing: 2px;
 }
+
+.detailsArrow {
+  position: fixed;
+  z-index: 2;
+  background-color: transparent;
+  border: none;
+  padding: 12px;
+  font-size: 55px;
+  color: white;
+  opacity: 0.5;
+  top:35vh;
+}
+
+.detailsArrow:hover {
+  opacity: 1;
+  scale: 1.1;
+}
+
+.left-arrow {
+  left:7%;
+}
+
+.right-arrow {
+  right: 7%;
+}

@@ -3,6 +3,7 @@ import starship from "../../img/starship-icon.png";
 import vehicle from "../../img/vehicle-icon.png";
 import { Context } from "../store/appContext";
 import { useState, useEffect } from "react";
+import "../../styles/detail.css";
 
 export const PeopleDetails = (props) => {
   const { store, actions } = useContext(Context);
@@ -24,7 +25,6 @@ export const PeopleDetails = (props) => {
     setIsLoading(true);
     if (props.url) {
       const result = await actions.getCharVehiStarships(props.url);
-      console.log("Vehicles and Starships Result:", result);
       setVehicStarships(result);
     }
     setIsLoading(false);

@@ -25,7 +25,6 @@ const getState = ({ getStore, getActions, setStore }) => {
           const resp = await fetch(getStore().url + `/${type}/${uid}`);
           if (!resp.ok) throw new Error("Error loading data");
           const data = await resp.json();
-          console.log(data);
           setStore({ details: data.result });
         } catch (error) {
           console.error(error);
@@ -37,7 +36,6 @@ const getState = ({ getStore, getActions, setStore }) => {
           const resp = await fetch(url);
           if (!resp.ok) throw new Error("Error loading planet");
           const data = await resp.json();
-          console.log(data);
          return(data.result.properties.name ) 
         } catch (error) {
           console.error(error);
@@ -49,7 +47,6 @@ const getState = ({ getStore, getActions, setStore }) => {
           const resp = await fetch(getStore().url + `/${type}/${uid}`);
           if (!resp.ok) throw new Error("Error loading vehicle/starships");
           const data = await resp.json();
-          console.log(data);
           const pilotsArray = data.result.properties.pilots
          return pilotsArray 
         } catch (error) {

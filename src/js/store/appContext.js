@@ -27,6 +27,7 @@ const injectContext = PassedComponent => {
 			state.actions.loadInfo("vehicles");
 			state.actions.loadInfo("starships");
 			state.actions.loadInfo("planets");
+	
 		  }, []); 
 
 		// The initial value for the context is not null anymore, but the current state of this component,
