@@ -5,14 +5,15 @@ const getState = ({ getStore, getActions, setStore }) => {
       people:[],
 			vehicles:[],
 			starships:[],
-		  planets:[]
+		  planets:[],
+      species:[]
     },
     actions: {
       loadInfo: async (type) => {
         try {
             let url = getStore().url + `/${type}`;
             let results = [];
-            const limit = 12; 
+            const limit = 16; 
     
             while (url && results.length < limit) {
                 const resp = await fetch(url);
@@ -68,7 +69,19 @@ const getState = ({ getStore, getActions, setStore }) => {
         }
       },
 
-      getCharVehiStarships: async (characterUrl) => {
+      getSpecie: async (type, uid) => {
+        try {
+          const resp = await fetch(getStore().url + `/${type}/${uid}`);
+          if (!resp.ok) throw new Error("Error loading vehicle/starships");
+          const data = await resp.json();
+          const speciesArray = data.result.properties.people
+         return speciesArray 
+        } catch (error) {
+          console.error(error);
+        }
+      },
+
+      getCharPlusInfo: async (characterUrl) => {
         const store = getStore();
       
         const vehiclesPromises = store.vehicles.map(async (vehicle) => {
@@ -89,17 +102,27 @@ const getState = ({ getStore, getActions, setStore }) => {
           return null;
         });
       
+        const speciesPromises = store.species.map(async (specie) => {
+          const people = await getActions().getSpecie("species", specie.uid);
+          if (people && people.includes(characterUrl)) {
+            return specie.name; 
+          }
+          return null;
+        });
         
         const vehiclesResults = await Promise.all(vehiclesPromises);
         const starshipsResults = await Promise.all(starshipsPromises);
+        const speciesResults = await Promise.all(speciesPromises);
       
     
         const charVehicles = vehiclesResults.filter((name) => name !== null);
         const charStarships = starshipsResults.filter((name) => name !== null);
+        const charSpecie = speciesResults.filter((name) => name !== null);
       
         return {
           vehicles: charVehicles.length ? charVehicles : ["No vehicles"],
           starships: charStarships.length ? charStarships : ["No starships"],
+          species: charSpecie.length ? charSpecie : ["Human"]
         };
       },
 

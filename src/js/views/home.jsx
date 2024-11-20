@@ -7,6 +7,7 @@ import vehicleIcon from "../../img/vehicle-icon.png";
 import Pointer from "../../img/cursor-pointer.png";
 import "../../styles/home.css";
 import { SmChar } from "../component/smallCard.jsx";
+import { PlanetChar } from "../component/smallCardPlanet.jsx";
 import { Context } from "../store/appContext";
 import { Navbar } from "../component/navbar.jsx";
 
@@ -37,7 +38,7 @@ export const Home = () => {
       <Navbar />
       <section className="myBg" style={{ backgroundImage: `url(${bgTop})` }}>
         <div className="horizontal-scrollable">
-          <div className="row flex-nowrap mt-4 pt-5">
+          <div className="row flex-nowrap mx-4 pt-5">
             <div className="col-1 col-md-4 col-lg-3  m-3"></div>
             {store.people?.map((person) => (
               <SmChar
@@ -59,7 +60,7 @@ export const Home = () => {
                 return planet.uid && planet.name && isValidImage(imageUrl);
               })
               .map((planet) => (
-                <SmChar
+                <PlanetChar
                   key={planet.uid}
                   img={`https://starwars-visualguide.com/assets/img/planets/${planet.uid}.jpg`}
                   name={planet.name}

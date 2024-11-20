@@ -12,7 +12,7 @@ import vehicle from "../../img/vehicle-icon.png";
 export const PeopleDetails = (props) => {
   const { store, actions } = useContext(Context);
   const [planetName, setPlanetName] = useState("");
-  const [vehiclesAndStarships, setVehicStarships] = useState({
+  const [charPlusInfo, setCharPlusInfo] = useState({
     vehicles: [],
     starships: [],
   });
@@ -25,11 +25,11 @@ export const PeopleDetails = (props) => {
     }
   };
 
-  const fetchVehicStarships = async () => {
+  const fetchCharPlusInfo = async () => {
     setIsLoading(true);
     if (props.url) {
-      const result = await actions.getCharVehiStarships(props.url);
-      setVehicStarships(result);
+      const result = await actions.getCharPlusInfo(props.url);
+      setCharPlusInfo(result);
     }
     setIsLoading(false);
   };
@@ -39,7 +39,7 @@ export const PeopleDetails = (props) => {
   }, [props.homeworld]);
 
   useEffect(() => {
-    fetchVehicStarships();
+    fetchCharPlusInfo();
   }, [props.url]);
 
 
@@ -121,6 +121,18 @@ export const PeopleDetails = (props) => {
           </div>{" "}
           <div className="row detailsPlusInfo">
             <div className=" col-5">
+            <p>
+            <span className="fa-solid fa-caret-right arrow me-1"></span>
+                {(() => {
+                  if (isLoading) {
+                    return "Loading...";
+                  }
+                  if (charPlusInfo.species.length > 0) {
+                    return charPlusInfo.species.join(", ");
+                  }
+                  return "Human";
+                })()}
+              </p>
               <p>
                 <span className="fa-solid fa-caret-right arrow me-1"></span>
                 {planetName || (
@@ -135,8 +147,8 @@ export const PeopleDetails = (props) => {
                   if (isLoading) {
                     return "Loading...";
                   }
-                  if (vehiclesAndStarships.vehicles.length > 0) {
-                    return vehiclesAndStarships.vehicles.join(", ");
+                  if (charPlusInfo.vehicles.length > 0) {
+                    return charPlusInfo.vehicles.join(", ");
                   }
                   return "No vehicles";
                 })()}
@@ -147,8 +159,8 @@ export const PeopleDetails = (props) => {
                   if (isLoading) {
                     return "Loading...";
                   }
-                  if (vehiclesAndStarships.starships.length > 0) {
-                    return vehiclesAndStarships.starships.join(", ");
+                  if (charPlusInfo.starships.length > 0) {
+                    return charPlusInfo.starships.join(", ");
                   }
                   return "No starships";
                 })()}

@@ -27,6 +27,7 @@ const injectContext = PassedComponent => {
 			state.actions.loadInfo("vehicles");
 			state.actions.loadInfo("starships");
 			state.actions.loadInfo("planets");
+			state.actions.loadInfo("species");
 	
 		  }, []); 
 

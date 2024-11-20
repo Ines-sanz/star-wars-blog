@@ -4,6 +4,10 @@
   overflow: hidden;
 }
 
+.planetSmall{
+  margin-bottom: 0;
+}
+
 .smallCard img {
   border: solid 1px white;
   display: block;
@@ -35,4 +39,10 @@
 
 .glass:hover .smallCardTitle {
   color: white;
+}
+
+.planetInfoSmCard{
+  margin-top: -60px;
+  z-index: 3;
+  margin-bottom: 0;
 }
