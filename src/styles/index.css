@@ -1,3 +1,7 @@
+html {
+  cursor: url('../img/cursor-icon.png'), auto;
+}
+
 body {
   font-family: "Montserrat", sans-serif;
 }
@@ -18,56 +22,16 @@ body {
   outline-offset: 5px;
 }
 
-.myCard {
-  border-radius: 4px;
-  position: relative;
-  overflow: hidden;
-}
-
-.myCard img {
-  border: solid 1px white;
-  display: block;
-  width: 100%;
-  height: auto;
-}
-.cardTitle {
-  font-family: "Funnel Display", sans-serif;
-  font-weight: 300;
-  color: rgba(255, 255, 255, 0.5);
-}
-
-.cardIcon{
+.generalIcon{
     margin-top: 5px;
     font-size: 20px;
     color: rgba(255, 255, 255, 0.5);
     transform: ease 0.2s;
 }
 
-.cardIcon:hover {
+.generalIcon:hover {
     color: white;
     transform: scale(1.2);
-}
-
-
-
-.myCard::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(29, 9, 46, 0.5);
-  mix-blend-mode: multiply;
-  pointer-events: none;
-}
-
-.glass:hover .myCard::before {
-  background: none;
-}
-
-.glass:hover .cardTitle {
-  color: white;
 }
 
 .divider{

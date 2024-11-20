@@ -13,13 +13,14 @@ opacity: 0.4;
 .navbarLogo{
     position: absolute;
     top: 20px;
-    left: calc(50% - 150px);
-    width: 300px;
+    left: calc(50% - 128px);
+    width: 250px;
     height: auto;
 }
 
-.myButton{
-    margin-right: 20px;
+.navButton{
+    margin-top: 10px;
+    margin-right: 10px;
     background: linear-gradient(
       135deg,
       rgba(255, 255, 255, 0.3),
@@ -32,7 +33,7 @@ opacity: 0.4;
     color: rgba(255, 255, 255, 0.637);
 }
 
-.myDropdown{
+.navDropdown{
     width: 230px;
     margin-left: -170px;
     overflow-x: hidden;

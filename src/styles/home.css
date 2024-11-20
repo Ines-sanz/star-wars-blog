@@ -1,37 +1,67 @@
-.myBg{
-   height: auto;
-   background-repeat: no-repeat;
-   background-size: cover;
-   padding-top: 6%;
-   padding-bottom: 6%;
+.myBg {
+  height: auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 6%;
+  padding-bottom: 6%;
   background-position: center bottom;
 }
 
 .horizontal-scrollable {
-    overflow-x: auto; 
-    white-space: nowrap; 
-    padding: 10px; 
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 10px;
 }
 
 .horizontal-scrollable .row {
-    flex-wrap: nowrap; 
-    display: flex;
+  flex-wrap: nowrap;
+  display: flex;
 }
 
 .horizontal-scrollable::-webkit-scrollbar {
-    height: 8px; 
+  height: 8px;
 }
 
 .horizontal-scrollable::-webkit-scrollbar-track {
-    background: #3630355b; 
-    border-radius: 10px;
+  background: #3630355b;
+  border-radius: 10px;
 }
 
 .horizontal-scrollable::-webkit-scrollbar-thumb {
-    background: #86828681; 
-    border-radius: 10px; 
+  background: #86828681;
+  border-radius: 10px;
 }
 
 .horizontal-scrollable::-webkit-scrollbar-thumb:hover {
-    background: #dfdcdc;
+  background: #dfdcdc;
+}
+
+.homeIcons{
+    width: 60px;
+    height: 60px;
+    margin-bottom: 5px;
+    transition: opacity 0.3s ease; 
+}
+    
+  .homeIcons.selected {
+    opacity: 1; 
+  }
+  
+  .homeIcons.unselected {
+    opacity: 0.5; 
+  }
+.glassVehicStars {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  height: auto;
+  position: relative;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.01)
+  );
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: 4px;
+  border: solid 1px rgba(255, 255, 255, 0.3);
 }

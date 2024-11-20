@@ -1,9 +1,13 @@
 import React, { useContext } from "react";
-import starship from "../../img/starship-icon.png";
-import vehicle from "../../img/vehicle-icon.png";
 import { Context } from "../store/appContext";
 import { useState, useEffect } from "react";
+
 import "../../styles/detail.css";
+import "../../styles/index.css";
+
+import starship from "../../img/starship-icon.png";
+import vehicle from "../../img/vehicle-icon.png";
+
 
 export const PeopleDetails = (props) => {
   const { store, actions } = useContext(Context);
@@ -39,21 +43,21 @@ export const PeopleDetails = (props) => {
   }, [props.url]);
 
   return (
-    <div className="col-12 col-lg-10 justify-content-center">
-      <div className="p-3 glass row g-0 justify-content-center">
-        <figure className="col-10 col-lg-4">
-          <img
-            className="img-fluid detailImg"
-            src={props.img}
-            alt={props.name}
-          />
-        </figure>
-        <div className="col-12 col-lg-8">
+    <div className="col-12 col-lg-10 justify-content-center mt-5">
+    <div className="p-3 glass row g-0 justify-content-center d-flex mx-0">
+      <figure className="col-11 col-xl-4 text-center text-xl-end">
+        <img
+          className="img-fluid detailImg"
+          src={props.img}
+          alt={props.name}
+        />
+      </figure>
+        <div className="col-12 col-xl-8">
           <div className="detailTitle col-12 col-lg-11 d-flex justify-content-between px-4 mt-2">
             <h3>{props.name}</h3>
-            <span className="fa-solid fa-star cardIcon"></span>
+            <span className="fa-solid fa-star generalIcon"></span>
           </div>
-          <div className="glassDetail col-12 col-lg-11 ps-4 p-3">
+          <div className="detailGlass col-12 col-lg-11  p-3">
             <div className="d-flex align-items-center">
               <div className="  col-11 d-flex align-items-end">
                 <p className="detailSubtitle ">Born in</p>
