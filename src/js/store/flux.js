@@ -6,7 +6,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			vehicles:[],
 			starships:[],
 		  planets:[],
-      species:[]
+      species:[],
+      favorites:[]
     },
     actions: {
       loadInfo: async (type) => {
@@ -127,7 +128,34 @@ const getState = ({ getStore, getActions, setStore }) => {
       },
 
 
-      clearSingle: () => setStore({ details: {} })
+      clearSingle: () => setStore({ details: {} }),
+
+      toggleFav: (fav) => {
+        const store = getStore();
+     
+        const isFavorite = store.favorites.some(
+          (el) => el.uid === fav.uid && el.type === fav.type
+        );
+      
+        if (isFavorite) {
+        
+          setStore({
+            favorites: store.favorites.filter(
+              (el) => !(el.uid === fav.uid && el.type === fav.type)
+            ),
+          });
+        } else {
+          
+          setStore({
+            favorites: [
+              ...store.favorites,
+              { name: fav.name, uid: fav.uid, type: fav.type }, 
+            ],
+          });
+        }
+      
+        console.log(getStore().favorites); 
+      },
     },
   };
 };
