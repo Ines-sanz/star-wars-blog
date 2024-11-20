@@ -1,7 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import { useState } from "react";
 import bgTop from "../../img/bg-top.jpg";
-import bgPlanet from "../../img/bg-planet.png";
 import bgBottom from "../../img/bg-bottom.png";
 import starshipIcon from "../../img/starship-icon.png";
 import vehicleIcon from "../../img/vehicle-icon.png";
@@ -38,7 +37,7 @@ export const Home = () => {
       <Navbar />
       <section className="myBg" style={{ backgroundImage: `url(${bgTop})` }}>
         <div className="horizontal-scrollable">
-          <div className="row flex-nowrap mt-5 pt-5">
+          <div className="row flex-nowrap mt-4 pt-5">
             <div className="col-1 col-md-4 col-lg-3  m-3"></div>
             {store.people?.map((person) => (
               <SmChar
@@ -50,13 +49,10 @@ export const Home = () => {
               />
             ))}
           </div>
-        </div>
-      </section>
-
-      <section className="myBg" style={{ backgroundImage: `url(${bgPlanet})` }}>
-        <div className="horizontal-scrollable">
-          <div className="row flex-nowrap">
-            <div className="col-1 col-md-4 col-lg-3  m-3"></div>
+        </div> 
+        <div className="horizontal-scrollable mt-5">
+          <div className="row flex-nowrap mt-5">
+            <div className="col-1 col-md-4 col-lg-3  m-3 "></div>
             {store.planets
               ?.filter((planet) => {
                 const imageUrl = `https://starwars-visualguide.com/assets/img/planets/${planet.uid}.jpg`;
@@ -75,6 +71,7 @@ export const Home = () => {
         </div>
       </section>
 
+     
       <section className="myBg pb-0" style={{ backgroundImage: `url(${bgBottom})` }}>
         <div className="d-flex ps-5">
           <img

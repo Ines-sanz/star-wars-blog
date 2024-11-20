@@ -31,10 +31,10 @@ export const Navbar = () => {
         onClick={handleLinkHome}
       />
 
-      <div class="dropdown" >
+      <div className="dropdown" >
         <a
         style={{ cursor: `url(${Pointer}) 16 16, auto` }}
-          class="btn navButton dropdown-toggle"
+          className="btn navButton dropdown-toggle"
           href="#"
           role="button"
           data-bs-toggle="dropdown"
@@ -43,19 +43,19 @@ export const Navbar = () => {
           <span className="fa-solid fa-star "></span>
         </a>
 
-        <ul class="dropdown-menu navDropdown">
+        <ul className="dropdown-menu navDropdown">
           <li>
-            <a class="dropdown-item" href="#" >
+            <a className="dropdown-item" href="#" >
               Action
             </a>
           </li>
           <li>
-            <a class="dropdown-item" href="#">
+            <a className="dropdown-item" href="#">
               Another action
             </a>
           </li>
           <li>
-            <a class="dropdown-item" href="#">
+            <a className="dropdown-item" href="#">
               Something else here
             </a>
           </li>

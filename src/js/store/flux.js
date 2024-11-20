@@ -10,15 +10,29 @@ const getState = ({ getStore, getActions, setStore }) => {
     actions: {
       loadInfo: async (type) => {
         try {
-          const resp = await fetch(getStore().url + `/${type}`);
-          if (!resp.ok) throw new Error("Error loading data");
-          const data = await resp.json();
-          console.log(data);
-          setStore({ [type]: data.results });
+            let url = getStore().url + `/${type}`;
+            let results = [];
+            const limit = 12; 
+    
+            while (url && results.length < limit) {
+                const resp = await fetch(url);
+                if (!resp.ok) throw new Error("Error loading data");
+    
+                const data = await resp.json();
+                results = results.concat(data.results);
+  
+                if (results.length > limit) {
+                    results = results.slice(0, limit); 
+                }
+    
+                url = data.next; 
+            }
+    
+            setStore({ [type]: results });
         } catch (error) {
-          console.error(error);
+            console.error(error);
         }
-      },
+    },
 
       getSingle: async (type,uid) => {
         try {

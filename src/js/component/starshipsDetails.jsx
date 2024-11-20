@@ -7,14 +7,14 @@ export const StarshipsDetails = (props) => {
   return (
     <div className="col-12 col-lg-10 justify-content-center mt-5">
       <div className="p-3 glass row g-0 justify-content-center d-flex">
-        <figure className="col-11 col-xl-4">
+        <figure className="col-11 col-xl-4 text-center">
           <img
             className="img-fluid detailImg"
             src={props.img}
             alt={props.name}
           />
         </figure>
-        <div className="col-12 col-xl-7 ">
+        <div className="col-12 col-xl-7 ms-lg-5 ms-0 ms-xl-0">
           <div className="detailTitle col-12 col-lg-11 d-flex justify-content-between px-4 mt-2">
             <h3>{props.name}</h3>
             <span className="fa-solid fa-star generalIcon"></span>

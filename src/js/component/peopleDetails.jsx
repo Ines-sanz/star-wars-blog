@@ -42,6 +42,7 @@ export const PeopleDetails = (props) => {
     fetchVehicStarships();
   }, [props.url]);
 
+
   return (
     <div className="col-12 col-lg-10 justify-content-center mt-5">
     <div className="p-3 glass row g-0 justify-content-center d-flex mx-0">
@@ -52,7 +53,7 @@ export const PeopleDetails = (props) => {
           alt={props.name}
         />
       </figure>
-        <div className="col-12 col-xl-8">
+        <div className="col-12 col-xl-7 ms-lg-5 ms-0 ms-xl-0">
           <div className="detailTitle col-12 col-lg-11 d-flex justify-content-between px-4 mt-2">
             <h3>{props.name}</h3>
             <span className="fa-solid fa-star generalIcon"></span>
@@ -122,18 +123,14 @@ export const PeopleDetails = (props) => {
             <div className=" col-5">
               <p>
                 <span className="fa-solid fa-caret-right arrow me-1"></span>
-                Human
-              </p>
-              <p>
-                <span className="fa-solid fa-caret-right arrow me-1"></span>
                 {planetName || (
                   <span className="detailsPlusInfo">Loading...</span>
                 )}
               </p>
             </div>
-            <div className="col-7">
+            <div className="col-12 col-xl-7 mt-3 mt-xl-0">
               <p>
-                <img className="peopleIcon" src={vehicle} alt="vehicle" />
+                <img className="peopleIcon" src={vehicle} alt="vehicle"  />
                 {(() => {
                   if (isLoading) {
                     return "Loading...";

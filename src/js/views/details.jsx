@@ -112,7 +112,7 @@ export const Details = () => {
             population={store.details.properties?.population}
             climate={store.details.properties?.climate}
             terrain={store.details.properties?.terrain}
-            surface_water={store.details.properties?.orbital_period}
+            surface_water={store.details.properties?.surface_water}
             name={store.details.properties?.name}
           />
         )}
