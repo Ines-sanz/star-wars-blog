@@ -57,7 +57,7 @@ export const PeopleDetails = (props) => {
   );
   
   return (
-    <div className="col-12 col-lg-10 justify-content-center mt-5">
+    <div className="col-12 col-lg-10 justify-content-center mt-3">
     <div className="p-3 glass row g-0 justify-content-center d-flex mx-0">
       <figure className="col-11 col-xl-4 text-center text-xl-end">
         <img

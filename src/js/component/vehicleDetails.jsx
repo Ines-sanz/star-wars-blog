@@ -1,6 +1,6 @@
 import React from "react";
 import "../../styles/detail.css";
-import vehicle from "../../img/vehicle-icon.png";
+
 import credits from "../../img/credits-icon.png";
 
 export const VehiclesDetails = (props) => {
@@ -20,11 +20,7 @@ export const VehiclesDetails = (props) => {
             <span className="fa-solid fa-star generalIcon"></span>
           </div>
           <div className="detailGlass col-12 col-lg-11 ps-4 p-3 text-start">
-            <img
-              className="peopleIcon vehicleIcon"
-              src={vehicle}
-              alt="vehicle"
-            />
+        
             <div className="d-flex align-items-center">
               <p className="birthYear text-uppercase">{props.model}</p>
             </div>

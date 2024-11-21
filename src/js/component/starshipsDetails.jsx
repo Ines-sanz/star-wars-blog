@@ -1,6 +1,6 @@
 import React from "react";
 import "../../styles/detail.css";
-import starship from "../../img/starship-icon.png";
+
 import credits from "../../img/credits-icon.png";
 
 export const StarshipsDetails = (props) => {
@@ -20,11 +20,7 @@ export const StarshipsDetails = (props) => {
             <span className="fa-solid fa-star generalIcon"></span>
           </div>
           <div className="detailGlass col-12 col-lg-11 ps-4 p-3">
-            <img
-              className="peopleIcon vehicleIcon"
-              src={starship}
-              alt="starship"
-            />
+          
             <div className="d-flex align-items-center">
               <p className=" col-11 birthYear text-uppercase">{props.model}</p>
             </div>

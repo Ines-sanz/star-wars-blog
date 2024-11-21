@@ -7,6 +7,15 @@
   padding-bottom: 6%;
   background-position: center center;
 }
+.myBgBottom {
+  width: 100%;
+  height: auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 6%;
+  padding-bottom: 6%;
+  background-position: center bottom;
+}
 
 .horizontal-scrollable {
   overflow-x: auto;
@@ -50,6 +59,10 @@
   
   .homeIcons.unselected {
     opacity: 0.5; 
+  }
+
+  .timeline{
+    height: 80vh;
   }
 .glassVehicStars {
   padding-top: 50px;

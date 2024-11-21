@@ -5,11 +5,13 @@ import bgBottom from "../../img/bg-bottom.png";
 import starshipIcon from "../../img/starship-icon.png";
 import vehicleIcon from "../../img/vehicle-icon.png";
 import Pointer from "../../img/cursor-pointer.png";
+import Timeline from "../../img/timeline.png";
 import "../../styles/home.css";
 import { SmChar } from "../component/smallCard.jsx";
 import { PlanetChar } from "../component/smallCardPlanet.jsx";
 import { Context } from "../store/appContext";
 import { Navbar } from "../component/navbar.jsx";
+
 
 export const Home = () => {
   const [selected, setSelected] = useState("vehicles");
@@ -50,10 +52,10 @@ export const Home = () => {
               />
             ))}
           </div>
-        </div> 
+        </div>
         <div className="horizontal-scrollable mt-5">
           <div className="row flex-nowrap mt-5">
-            <div className="col-1 col-md-4 col-lg-3  m-3 "></div>
+            <div className="col-1 col-md-4 col-lg-3  m-4 me-4 "></div>
             {store.planets
               ?.filter((planet) => {
                 const imageUrl = `https://starwars-visualguide.com/assets/img/planets/${planet.uid}.jpg`;
@@ -72,26 +74,37 @@ export const Home = () => {
         </div>
       </section>
 
-     
-      <section className="myBg pb-0" style={{ backgroundImage: `url(${bgBottom})` }}>
-        <div className="d-flex ps-5">
+      <section
+        className="myBgBottom pb-0"
+        style={{ backgroundImage: `url(${bgBottom})` }}
+      >
+        <div className="horizontal-scrollable my-3">
+<img src={Timeline} alt="timeline" className="timeline"/>
+        </div>
+
+        <div className="d-flex ps-5 mt-5">
           <img
-          style={{ cursor: `url(${Pointer}) 16 16, auto` }}
+            style={{ cursor: `url(${Pointer}) 16 16, auto` }}
             src={vehicleIcon}
             alt="vehicles"
-            className={`homeIcons ${selected === "vehicles" ? "selected" : "unselected"}`}
+            className={`homeIcons ${
+              selected === "vehicles" ? "selected" : "unselected"
+            }`}
             id="vehicles"
             onClick={() => toggleSelected("vehicles")}
           />
           <img
-           style={{ cursor: `url(${Pointer}) 16 16, auto` }}
+            style={{ cursor: `url(${Pointer}) 16 16, auto` }}
             src={starshipIcon}
             alt="starships"
-            className={`homeIcons ${selected === "starships" ? "selected" : "unselected"}`}
+            className={`homeIcons ${
+              selected === "starships" ? "selected" : "unselected"
+            }`}
             id="starships"
             onClick={() => toggleSelected("starships")}
           />
         </div>
+
         <div className="glassVehicStars">
           <div
             className={`horizontal-scrollable my-5 ${

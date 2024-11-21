@@ -15,6 +15,13 @@ import "../../styles/detail.css";
 export const Details = () => {
   const { type, uid } = useParams();
   const { store, actions } = useContext(Context);
+  const backgroundImages = {
+    people: peopleBg,
+    vehicles: vehicBg,
+    starships: vehicBg,
+    planets: planetBg,
+  };
+
 
   useEffect(() => {
     actions.clearSingle();
@@ -22,15 +29,13 @@ export const Details = () => {
   }, [type, uid]);
 
   if (!store.details || !store.details.properties) {
-    return <div>Loading...</div>;
+    return <div
+    style={{
+      backgroundImage: `url(${backgroundImages[type]})`, height: `100vh`
+    } } className="detailsContainer d-flex justify-content-center align-items-center loadingDiv"
+  >Loading...</div>;
   }
 
-  const backgroundImages = {
-    people: peopleBg,
-    vehicles: vehicBg,
-    starships: vehicBg,
-    planets: planetBg,
-  };
 
   return (
     <>
@@ -117,7 +122,7 @@ export const Details = () => {
           />
         )}
 
-      
+
       </div>
     </>
   );
