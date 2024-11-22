@@ -1,19 +1,24 @@
 import React, { useContext, useEffect } from "react";
 import { useState } from "react";
+import { Context } from "../store/appContext";
+
 import bgTop from "../../img/bg-top.jpg";
 import bgBottom from "../../img/bg-bottom.png";
 import starshipIcon from "../../img/starship-icon.png";
 import vehicleIcon from "../../img/vehicle-icon.png";
 import Pointer from "../../img/cursor-pointer.png";
 import Timeline from "../../img/timeline.png";
+
 import "../../styles/home.css";
+
+import { Navbar } from "../component/navbar.jsx";
 import { SmChar } from "../component/smallCard.jsx";
 import { PlanetChar } from "../component/smallCardPlanet.jsx";
-import { Context } from "../store/appContext";
-import { Navbar } from "../component/navbar.jsx";
 
 
-export const Home = () => {
+
+
+export const Home = () => { 
   const [selected, setSelected] = useState("vehicles");
 
   const { store, actions } = useContext(Context);
