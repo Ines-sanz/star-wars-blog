@@ -8,31 +8,31 @@ export const PlanetDetails = (props) => {
   return (
     <div className="col-12 col-lg-10 justify-content-center mt-3">
       <div className="glass row g-0 justify-content-center ">
-        <figure className=" col-10 col-md-7 col-xl-5 planetFigure" >
+        <figure className=" col-10 col-md-7 col-xl-5 planet-figure" >
           <img
-            className="img-fluid planetImg"
+            className="img-fluid planet-img"
             src={props.img}
             alt={props.name}
           />
          
         </figure>
         <div className="col-11 col-xl-7 my-3 ms-lg-5 ms-0 ms-xl-0">
-          <div className="detailTitle col-12 col-lg-11 d-flex justify-content-between px-4 mt-2">
+          <div className="detail-title col-12 col-lg-11 d-flex justify-content-between px-4 mt-2">
             <h3>{props.name}</h3>
-            <span className="fa-solid fa-star generalIcon"></span>
+            <span className="fa-solid fa-star general-icon"></span>
           </div>
-        <div className="detailGlass col-12 col-lg-11  p-3">
-            <div className=" row detailsInfo">
+        <div className="detail-glass col-12 col-lg-11  p-3">
+            <div className=" row details-info">
               <div className="col-12">
                 <p>
-                  <span className="detailSubtitle">
+                  <span className="detail-subtitle">
                     <span className="fa-solid fa-caret-right arrow"></span>{" "}
                     Population:{" "}
                   </span>
                   {props.population}
                 </p>
                 <p>
-                  <span className="detailSubtitle">
+                  <span className="detail-subtitle">
                     <span className="fa-solid fa-caret-right arrow"></span>{" "}
                     Gravity{" "}
                   </span>{" "}
@@ -41,23 +41,23 @@ export const PlanetDetails = (props) => {
               </div>
               <div className="col-12">
                 <p>
-                  <span className="detailSubtitle">
+                  <span className="detail-subtitle">
                     <span className="fa-solid fa-caret-right arrow"></span> Climate:{" "}
                   </span>
                   {props.climate}
                 </p>
                 <p>
-                  <span className="detailSubtitle">
+                  <span className="detail-subtitle">
                     <span className="fa-solid fa-caret-right arrow"></span> Terrain:{" "}
                   </span>
                   {props.terrain}
                 </p>
         
-            <p className="planetInfo"> 
-                  <span className="detailSubtitle"> <span className="fa-solid fa-caret-right arrow"></span>
+            <p className="planet-info"> 
+                  <span className="detail-subtitle"> <span className="fa-solid fa-caret-right arrow"></span>
                   {" "} surface water  {" "}
                   </span>
-                  {props.surface_water} <span className="detailSubtitle">%</span>
+                  {props.surface_water} <span className="detail-subtitle">%</span>
                 </p>
          
               </div>
@@ -67,29 +67,29 @@ export const PlanetDetails = (props) => {
           
           <div className="col-12 col-xl-6 d-flex align-content-center">
            
-            <p className="planetInfo"> <img src={rotation} alt="" className="peopleIcon"/>
-                  <span className="detailSubtitle">
+            <p className="planet-info"> <img src={rotation} alt="" className="people-icon"/>
+                  <span className="detail-subtitle">
                  Rotation P.   {" "}
                   </span>
-                  {props.rotation_period} <span className="detailSubtitle">d</span>
+                  {props.rotation_period} <span className="detail-subtitle">d</span>
                 </p>
           </div>
           <div className="col-12 col-xl-6 d-flex align-content-center">
            
-            <p className="planetInfo"> <img src={orbital} alt="" className="peopleIcon"/>
-                  <span className="detailSubtitle">
+            <p className="planet-info"> <img src={orbital} alt="" className="people-icon"/>
+                  <span className="detail-subtitle">
                  Orbital P.   {" "}
                   </span>
-                  {props.orbital_period} <span className="detailSubtitle">d</span>
+                  {props.orbital_period} <span className="detail-subtitle">d</span>
                 </p>
           </div>
           <div className="col-12 col-xl-6 d-flex align-content-center">
-          <p className="planetInfo">
-                  <span className="detailSubtitle">
-                  <img src={diameter} alt="" className="peopleIcon"/>{" "}
+          <p className="planet-info">
+                  <span className="detail-subtitle">
+                  <img src={diameter} alt="" className="people-icon"/>{" "}
                     Diameter:{" "}
                   </span>
-                  {props.diameter} <span className="detailSubtitle">m</span>
+                  {props.diameter} <span className="detail-subtitle">m</span>
                 </p></div>
         </div>
       </div>

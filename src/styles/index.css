@@ -22,7 +22,7 @@ body {
   outline-offset: 5px;
 }
 
-.generalIcon{
+.general-icon{
     margin-top: 5px;
     font-size: 20px;
     color: rgba(255, 255, 255);
@@ -30,7 +30,7 @@ body {
     transform: ease 0.2s;
 }
 
-.generalIcon:hover {
+.general-icon:hover {
     color: white;
     transform: scale(1.2);
 }

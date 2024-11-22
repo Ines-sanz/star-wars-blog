@@ -9,30 +9,30 @@ export const VehiclesDetails = (props) => {
       <div className="p-3 glass row g-0 justify-content-center d-flex ">
         <figure className="col-11 col-xl-4 text-center">
           <img
-            className="img-fluid detailImg"
+            className="img-fluid detail-img"
             src={props.img}
             alt={props.name}
           />
         </figure>
         <div className="col-12 col-xl-7 ms-lg-5 ms-0 ms-xl-0">
-          <div className="detailTitle col-12 col-lg-11 d-flex justify-content-between px-4 mt-2">
+          <div className="detail-title col-12 col-lg-11 d-flex justify-content-between px-4 mt-2">
             <h3>{props.name}</h3>
-            <span className="fa-solid fa-star generalIcon"></span>
+            <span className="fa-solid fa-star general-icon"></span>
           </div>
-          <div className="detailGlass col-12 col-lg-11 ps-4 p-3 text-start">
+          <div className="detail-glass col-12 col-lg-11 ps-4 p-3 text-start">
         
             <div className="d-flex align-items-center">
-              <p className="birthYear text-uppercase">{props.model}</p>
+              <p className="birth-year text-uppercase">{props.model}</p>
             </div>
             <div className="row d-flex">
               <p className="small  ">
                 {props.manufacturer}
               </p>
             </div>
-            <div className=" row detailsInfo">
+            <div className=" row details-info">
               <div className="col-12 col-lg-5">
                 <p>
-                  <span className="detailSubtitle">
+                  <span className="detail-subtitle">
                     <span className="fa-solid fa-caret-right arrow"></span>{" "}
                   </span>
                   {props.vehicle_class}
@@ -40,30 +40,30 @@ export const VehiclesDetails = (props) => {
               </div>
               <div className="col-12 col-lg-7">
                 <p>
-                  <span className="detailSubtitle">
+                  <span className="detail-subtitle">
                     <span className="fa-solid fa-caret-right arrow"></span>{" "}
                     Cost:{" "}
                   </span>{" "}
                   {props.cost_in_credits}{" "}
-                  <span className="detailSubtitle">
+                  <span className="detail-subtitle">
                     {" "}
-                    <img className="peopleIcon" src={credits} alt="credits" />
+                    <img className="people-icon" src={credits} alt="credits" />
                   </span>
                 </p>
               </div>
             </div>
           </div>{" "}
         </div>
-        <div className="row detailsPlusInfo">
+        <div className="row details-plus-info">
           <div className=" col-12 col-md-4 col-lg-3">
             <p>
-              <span className="detailSubtitleSmall">
+              <span className="detail-subtitle-small">
                 <span className="fa-solid fa-caret-right arrow"></span> Crew:{" "}
               </span>
               {props.crew}
             </p>
             <p>
-              <span className="detailSubtitle">
+              <span className="detail-subtitle">
                 <span className="fa-solid fa-caret-right arrow"></span>{" "}
                 Passengers:{" "}
               </span>
@@ -72,15 +72,15 @@ export const VehiclesDetails = (props) => {
           </div>
           <div className="col-12 col-md-5 col-lg-4">
             <p>
-              <span className="detailSubtitle">
+              <span className="detail-subtitle">
                 <span className="fa-solid fa-caret-right arrow"></span> Max
                 speed:{" "}
               </span>
               {props.max_atmosphering_speed}{" "}
-              <span className="detailSubtitle">km/h</span>
+              <span className="detail-subtitle">km/h</span>
             </p>
             <p>
-              <span className="detailSubtitle">
+              <span className="detail-subtitle">
                 <span className="fa-solid fa-caret-right arrow"></span> Consum:{" "}
               </span>
               {props.consumables}
@@ -89,17 +89,17 @@ export const VehiclesDetails = (props) => {
 
           <div className="col-12 col-md-7 col-lg-5">
             <p>
-              <span className="detailSubtitle">
+              <span className="detail-subtitle">
                 <span className="fa-solid fa-caret-right arrow"></span> Length:{" "}
               </span>
-              {props.length} <span className="detailSubtitle">m</span>
+              {props.length} <span className="detail-subtitle">m</span>
             </p>
             <p>
-              <span className="detailSubtitle">
+              <span className="detail-subtitle">
                 <span className="fa-solid fa-caret-right arrow"></span> Cargo:{" "}
               </span>
               {props.cargo_capacity}{" "}
-              <span className="detailSubtitle">m/t</span>
+              <span className="detail-subtitle">m/t</span>
             </p>
           </div>
         </div>

@@ -1,4 +1,4 @@
-.homeIcon{
+.home-icon{
     margin-top: 10px;
 width: 40px;
 height: 40px;
@@ -6,11 +6,11 @@ margin-left: 20px;
 opacity: 0.4;
 }
 
-.homeIcon:hover{
+.home-icon:hover{
     opacity: 1;
     transform: scale(1.1);
 }
-.navbarLogo{
+.navbar-logo{
     position: absolute;
     top: 20px;
     left: calc(50% - 128px);
@@ -18,7 +18,7 @@ opacity: 0.4;
     height: auto;
 }
 
-.navButton{
+.nav-button{
     margin-top: 10px;
     margin-right: 10px;
     background: linear-gradient(
@@ -33,7 +33,7 @@ opacity: 0.4;
     color: rgba(255, 255, 255, 0.637);
 }
 
-.navDropdown{
+.nav-dropdown{
     width: 230px;
     margin-left: -170px;
     overflow-x: hidden;

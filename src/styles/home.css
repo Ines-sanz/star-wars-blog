@@ -1,4 +1,4 @@
-.myBg {
+.my-bg {
   width: 100%;
   height: auto;
   background-repeat: no-repeat;
@@ -7,7 +7,7 @@
   padding-bottom: 6%;
   background-position: center center;
 }
-.myBgBottom {
+.my-bg-bottom {
   width: 100%;
   height: auto;
   background-repeat: no-repeat;
@@ -46,25 +46,25 @@
   background: #dfdcdc;
 }
 
-.homeIcons{
+.home-icons{
     width: 60px;
     height: 60px;
     margin-bottom: 5px;
     transition: opacity 0.3s ease; 
 }
     
-  .homeIcons.selected {
+  .home-icons.selected {
     opacity: 1; 
   }
   
-  .homeIcons.unselected {
+  .home-icons.unselected {
     opacity: 0.5; 
   }
 
   .timeline{
     height: 80vh;
   }
-.glassVehicStars {
+.glass-vehic-stars {
   padding-top: 50px;
   padding-bottom: 50px;
   height: auto;

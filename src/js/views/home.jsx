@@ -38,7 +38,7 @@ export const Home = () => {
   return (
     <>
       <Navbar />
-      <section className="myBg" style={{ backgroundImage: `url(${bgTop})` }}>
+      <section className="my-bg" style={{ backgroundImage: `url(${bgTop})` }}>
         <div className="horizontal-scrollable">
           <div className="row flex-nowrap mx-4 pt-5">
             <div className="col-1 col-md-4 col-lg-3  m-3"></div>
@@ -75,7 +75,7 @@ export const Home = () => {
       </section>
 
       <section
-        className="myBgBottom pb-0"
+        className="my-bg-bottom pb-0"
         style={{ backgroundImage: `url(${bgBottom})` }}
       >
         <div className="horizontal-scrollable my-3">
@@ -87,7 +87,7 @@ export const Home = () => {
             style={{ cursor: `url(${Pointer}) 16 16, auto` }}
             src={vehicleIcon}
             alt="vehicles"
-            className={`homeIcons ${
+            className={`home-icons ${
               selected === "vehicles" ? "selected" : "unselected"
             }`}
             id="vehicles"
@@ -97,7 +97,7 @@ export const Home = () => {
             style={{ cursor: `url(${Pointer}) 16 16, auto` }}
             src={starshipIcon}
             alt="starships"
-            className={`homeIcons ${
+            className={`home-icons ${
               selected === "starships" ? "selected" : "unselected"
             }`}
             id="starships"
@@ -105,7 +105,7 @@ export const Home = () => {
           />
         </div>
 
-        <div className="glassVehicStars">
+        <div className="glass-vehic-stars">
           <div
             className={`horizontal-scrollable my-5 ${
               selected === "vehicles" ? "d-block" : "d-none"

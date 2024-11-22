@@ -32,7 +32,7 @@ export const Details = () => {
     return <div
     style={{
       backgroundImage: `url(${backgroundImages[type]})`, height: `100vh`
-    } } className="detailsContainer d-flex justify-content-center align-items-center loadingDiv"
+    } } className="details-container d-flex justify-content-center align-items-center loading-div"
   >Loading...</div>;
   }
 
@@ -41,7 +41,7 @@ export const Details = () => {
     <>
       <Navbar />
       <div
-        className="detailsContainer d-flex justify-content-center"
+        className="details-container d-flex justify-content-center"
         style={{
           backgroundImage: `url(${backgroundImages[type]})`,
         }}

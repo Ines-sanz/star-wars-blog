@@ -25,21 +25,21 @@ export const Navbar = () => {
       style={{ cursor: `url(${Pointer}) 16 16, auto` }}
         src={home}
         alt="Home"
-        className="homeIcon"
+        className="home-icon"
         onClick={handleLinkHome}
       />
 
       <img
         src={logo}
         alt="Home"
-        className="navbarLogo"
+        className="navbar-logo"
         onClick={handleLinkHome}
       />
 
       <div className="dropdown" >
         <a
         style={{ cursor: `url(${Pointer}) 16 16, auto` }}
-          className="btn navButton dropdown-toggle"
+          className="btn nav-button dropdown-toggle"
           href="#"
           role="button"
           data-bs-toggle="dropdown"
@@ -48,7 +48,7 @@ export const Navbar = () => {
           <span className="fa-solid fa-star "></span>
         </a>
 
-        <ul className="dropdown-menu navDropdown">
+        <ul className="dropdown-menu nav-dropdown">
           {store.favorites?.length > 0 ? (
             store.favorites.map((fav) => (
               <li key={fav.uid} className="d-flex align-items-center justify-content-between">

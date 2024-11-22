@@ -26,12 +26,12 @@ const isFavorite = store.favorites.some(
     <div className="col-10 col-md-4 col-lg-3 m-3">
       <div className="glass" >
         <div>
-          <figure className="smallCard planetSmall">
+          <figure className="small-card planet-small">
             <img className="img-fluid" src={props.img} alt={props.name} onClick={handleLink}/>
-            <div className="d-flex justify-content-between align-baseline px-3 planetInfoSmCard">
-              <h3 className="smallCardTitle overflow-hidden" onClick={handleLink}>{props.name}</h3>
+            <div className="d-flex justify-content-between align-baseline px-3 planet-info-sm-card">
+              <h3 className="small-card-title overflow-hidden" onClick={handleLink}>{props.name}</h3>
               <span
-                className="fa-solid fa-star generalIcon"
+                className="fa-solid fa-star general-icon"
                 style={{ cursor: `url(${Pointer}) 16 16, auto`,opacity: isFavorite ? 1 : 0.4, }}  onClick={handleFav}
               ></span>
             </div>

@@ -61,25 +61,25 @@ export const PeopleDetails = (props) => {
     <div className="p-3 glass row g-0 justify-content-center d-flex mx-0">
       <figure className="col-11 col-xl-4 text-center text-xl-end">
         <img
-          className="img-fluid detailImg"
+          className="img-fluid detail-img"
           src={props.img}
           alt={props.name}
         />
       </figure>
         <div className="col-12 col-xl-7 ms-lg-5 ms-0 ms-xl-0">
-          <div className="detailTitle col-12 col-lg-11 d-flex justify-content-between px-4 mt-2">
+          <div className="detail-title col-12 col-lg-11 d-flex justify-content-between px-4 mt-2">
             <h3>{props.name}</h3>
             <span
-                className="fa-solid fa-star generalIcon"
+                className="fa-solid fa-star general-icon"
                 style={{ cursor: `url(${Pointer}) 16 16, auto`,opacity: isFavorite ? 1 : 0.4, }}  onClick={handleFav}
               ></span>
           </div>
-          <div className="detailGlass col-12 col-lg-11  p-3">
+          <div className="detail-glass col-12 col-lg-11  p-3">
             <div className="d-flex align-items-center">
               <div className="  col-11 d-flex align-items-end">
-                <p className="detailSubtitle ">Born in</p>
+                <p className="detail-subtitle ">Born in</p>
                 <div className="divider  col-2 col-lg-6"></div>
-                <p className="birthYear">{props.birth_year}</p>
+                <p className="birth-year">{props.birth_year}</p>
               </div>
               <div className="gender col-1 ms-2 text-center">
                 {props.gender === "n/a" && (
@@ -93,17 +93,17 @@ export const PeopleDetails = (props) => {
                 )}
               </div>
             </div>
-            <div className=" row detailsInfo">
+            <div className=" row details-info">
               <div className="col-12 col-lg-5">
                 <p>
-                  <span className="detailSubtitle">
+                  <span className="detail-subtitle">
                     <span className="fa-solid fa-caret-right arrow"></span>{" "}
                     Height:{" "}
                   </span>
                   {props.height}
                 </p>
                 <p>
-                  <span className="detailSubtitle">
+                  <span className="detail-subtitle">
                     <span className="fa-solid fa-caret-right arrow"></span>{" "}
                     Mass:{" "}
                   </span>{" "}
@@ -112,21 +112,21 @@ export const PeopleDetails = (props) => {
               </div>
               <div className="col-12 col-lg-7">
                 <p>
-                  <span className="detailSubtitle">
+                  <span className="detail-subtitle">
                     <span className="fa-solid fa-caret-right arrow"></span> Skin
                     color:{" "}
                   </span>
                   {props.skin_color}
                 </p>
                 <p>
-                  <span className="detailSubtitle">
+                  <span className="detail-subtitle">
                     <span className="fa-solid fa-caret-right arrow"></span> Eye
                     color:{" "}
                   </span>
                   {props.eye_color}
                 </p>
                 <p>
-                  <span className="detailSubtitle">
+                  <span className="detail-subtitle">
                     <span className="fa-solid fa-caret-right arrow"></span> Hair
                     color:{" "}
                   </span>
@@ -135,7 +135,7 @@ export const PeopleDetails = (props) => {
               </div>
             </div>
           </div>{" "}
-          <div className="row detailsPlusInfo">
+          <div className="row details-plus-info">
             <div className=" col-5">
             <p>
             <span className="fa-solid fa-caret-right arrow me-1"></span>
@@ -152,13 +152,13 @@ export const PeopleDetails = (props) => {
               <p>
                 <span className="fa-solid fa-caret-right arrow me-1"></span>
                 {planetName || (
-                  <span className="detailsPlusInfo">Loading...</span>
+                  <span className="details-plus-info">Loading...</span>
                 )}
               </p>
             </div>
             <div className="col-12 col-xl-7 mt-3 mt-xl-0">
               <p>
-                <img className="peopleIcon" src={vehicle} alt="vehicle"  />
+                <img className="people-icon" src={vehicle} alt="vehicle"  />
                 {(() => {
                   if (isLoading) {
                     return "Loading...";
@@ -170,7 +170,7 @@ export const PeopleDetails = (props) => {
                 })()}
               </p>
               <p>
-                <img className="peopleIcon" src={starship} alt="starship" />
+                <img className="people-icon" src={starship} alt="starship" />
                 {(() => {
                   if (isLoading) {
                     return "Loading...";
