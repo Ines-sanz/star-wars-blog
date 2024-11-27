@@ -19,7 +19,8 @@ export const PlanetChar = (props) => {
     actions. toggleFav(newFav)
 }
 const isFavorite = store.favorites.some(
-  (fav) => fav.uid === props.uid && fav.type === props.type
+  //________________________________________________________________________________________________
+  (fav) => (fav.uid === props.uid && fav.type === props.type) /*|| fav.name === props.name*/
 );
 
   return (

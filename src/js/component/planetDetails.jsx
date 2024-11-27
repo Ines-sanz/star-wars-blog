@@ -1,10 +1,24 @@
-import React from "react";
+import React, { useContext } from "react";
 import "../../styles/detail.css";
 import rotation from "../../img/rota-icon.png";
 import orbital from "../../img/orbital-icon.png";
 import diameter from "../../img/diameter-icon.png";
+import Pointer from "../../img/cursor-pointer.png";
+import { Context } from "../store/appContext";
 
 export const PlanetDetails = (props) => {
+  const {store, actions} = useContext(Context)
+  const handleFav = () => {
+    const {name, uid, img, type } = props
+    const newFav = {
+        name, uid, img, type
+    }
+    actions. toggleFav(newFav)
+  }
+  
+  const isFavorite = store.favorites.some(
+    (fav) => fav.uid === props.uid && fav.type === props.type
+  );
   return (
     <div className="col-12 col-lg-10 justify-content-center mt-3">
       <div className="glass row g-0 justify-content-center ">
@@ -19,7 +33,10 @@ export const PlanetDetails = (props) => {
         <div className="col-11 col-xl-7 my-3 ms-lg-5 ms-0 ms-xl-0">
           <div className="detail-title col-12 col-lg-11 d-flex justify-content-between px-4 mt-2">
             <h3>{props.name}</h3>
-            <span className="fa-solid fa-star general-icon"></span>
+            <span
+                className="fa-solid fa-star general-icon"
+                style={{ cursor: `url(${Pointer}) 16 16, auto`,opacity: isFavorite ? 1 : 0.4, }}  onClick={handleFav}
+              ></span>
           </div>
         <div className="detail-glass col-12 col-lg-11  p-3">
             <div className=" row details-info">

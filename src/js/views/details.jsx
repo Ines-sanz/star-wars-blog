@@ -52,6 +52,8 @@ export const Details = () => {
             name={store.details?.properties?.name}
             url={store.details?.properties?.url}
             key={uid}
+            uid={uid}
+            type={type}
             img={`https://starwars-visualguide.com/assets/img/characters/${uid}.jpg`}
             height={store.details?.properties?.height}
             mass={store.details?.properties?.mass}
@@ -67,6 +69,8 @@ export const Details = () => {
         {type === "vehicles" && (
           <VehiclesDetails
             key={uid}
+            uid={uid}
+            type={type}
             img={`https://starwars-visualguide.com/assets/img/vehicles/${uid}.jpg`}
             name={store.details.properties?.name}
             model={store.details.properties?.model}
@@ -87,6 +91,8 @@ export const Details = () => {
         {type === "starships" && (
           <StarshipsDetails
             key={uid}
+            uid={uid}
+            type={type}
             img={`https://starwars-visualguide.com/assets/img/starships/${uid}.jpg`}
             name={store.details.properties?.name}
             model={store.details.properties?.model}
@@ -109,6 +115,8 @@ export const Details = () => {
         {type === "planets" && (
           <PlanetDetails
             key={uid}
+            uid={uid}
+            type={type}
             img={`https://starwars-visualguide.com/assets/img/planets/${uid}.jpg`}
             diameter={store.details.properties?.diameter}
             rotation_period={store.details.properties?.rotation_period}

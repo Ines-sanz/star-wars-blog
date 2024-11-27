@@ -134,14 +134,14 @@ const getState = ({ getStore, getActions, setStore }) => {
         const store = getStore();
      
         const isFavorite = store.favorites.some(
-          (el) => el.uid === fav.uid && el.type === fav.type
+          (el) => (el.uid === fav.uid && el.type === fav.type) /*|| (el.name === fav.name)*/
         );
       
         if (isFavorite) {
         
           setStore({
             favorites: store.favorites.filter(
-              (el) => !(el.uid === fav.uid && el.type === fav.type)
+              (el) => !((el.uid === fav.uid && el.type === fav.type)/* || (el.name === fav.name)*/)
             ),
           });
         } else {
