@@ -7,7 +7,8 @@ import bgBottom from "../../img/bg-bottom.png";
 import starshipIcon from "../../img/starship-icon.png";
 import vehicleIcon from "../../img/vehicle-icon.png";
 import Pointer from "../../img/cursor-pointer.png";
-import Timeline from "../../img/timeline.png";
+import Timeline1 from "../../img/timeline-1.png";
+import Timeline2 from "../../img/timeline-2.png";
 
 import "../../styles/home.css";
 
@@ -83,9 +84,12 @@ export const Home = () => {
         className="my-bg-bottom pb-0"
         style={{ backgroundImage: `url(${bgBottom})` }}
       >
-        <div className="horizontal-scrollable my-3">
-<img src={Timeline} alt="timeline" className="timeline"/>
-        </div>
+       
+<img src={Timeline1} alt="timeline" className="timeline img-fluid mb-2"/>
+
+<img src={Timeline2} alt="timeline" className="timeline img-fluid mt-2"/>
+     
+        
 
         <div className="d-flex ps-5 mt-5">
           <img

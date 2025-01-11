@@ -14,7 +14,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         try {
             let url = getStore().url + `/${type}`;
             let results = [];
-            const limit = 16; 
+            const limit = 10; 
     
             while (url && results.length < limit) {
                 const resp = await fetch(url);
@@ -48,13 +48,20 @@ const getState = ({ getStore, getActions, setStore }) => {
       },
 
       getPlanet: async (url) => {
+        const store = getStore();
+        const cachedPlanet = store.planets.find((p) => p.url === url);
+        if (cachedPlanet) return cachedPlanet.name;
+      
         try {
           const resp = await fetch(url);
           if (!resp.ok) throw new Error("Error loading planet");
           const data = await resp.json();
-         return(data.result.properties.name ) 
+          const newPlanet = { name: data.result.properties.name, url };
+          setStore({ planets: [...store.planets, newPlanet] });
+          return newPlanet.name;
         } catch (error) {
           console.error(error);
+          return "Unknown";
         }
       },
 

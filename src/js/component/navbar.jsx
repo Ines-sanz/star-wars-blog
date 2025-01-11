@@ -36,7 +36,7 @@ export const Navbar = () => {
         onClick={handleLinkHome}
       />
 
-      <div className="dropdown" >
+      <div className="dropdown me-2" >
         <a
         style={{ cursor: `url(${Pointer}) 16 16, auto` }}
           className="btn nav-button dropdown-toggle"
@@ -48,7 +48,7 @@ export const Navbar = () => {
           <span className="fa-solid fa-star "></span>
         </a>
 
-        <ul className="dropdown-menu nav-dropdown">
+        <ul className="dropdown-menu nav-dropdown ">
           {store.favorites?.length > 0 ? (
             store.favorites.map((fav) => (
               <li key={fav.uid} className="d-flex align-items-center justify-content-between">

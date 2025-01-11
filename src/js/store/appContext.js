@@ -22,14 +22,16 @@ const injectContext = PassedComponent => {
 		);
 
 		useEffect(() => {
-			// Llamadas a las acciones al montar el componente
-			state.actions.loadInfo("people");
-			state.actions.loadInfo("vehicles");
-			state.actions.loadInfo("starships");
-			state.actions.loadInfo("planets");
-			state.actions.loadInfo("species");
-	
-		  }, []); 
+			Promise.all([
+			  state.actions.loadInfo("people"),
+			  state.actions.loadInfo("vehicles"),
+			  state.actions.loadInfo("starships"),
+			  state.actions.loadInfo("planets"),
+			  state.actions.loadInfo("species"),
+			])
+			  .then(() => console.log("Data pre-loaded!"))
+			  .catch((error) => console.error("Error pre-loading data:", error));
+		  }, []);
 
 		// The initial value for the context is not null anymore, but the current state of this component,
 		// the context will now have a getStore, getActions and setStore functions available, because they were declared

@@ -10,7 +10,7 @@ import vehicle from "../../img/vehicle-icon.png";
 import Pointer from "../../img/cursor-pointer.png";
 
 
-export const PeopleDetails = (props) => {
+export const PeopleDetails = React.memo((props) => {
   const { store, actions } = useContext(Context);
   const [planetName, setPlanetName] = useState("");
   const [charPlusInfo, setCharPlusInfo] = useState({
@@ -19,29 +19,26 @@ export const PeopleDetails = (props) => {
   });
   const [isLoading, setIsLoading] = useState(true);
 
-  const fetchPlanet = async () => {
-    if (props.homeworld) {
-      const name = await actions.getPlanet(props.homeworld);
-      setPlanetName(name);
-    }
-  };
-
-  const fetchCharPlusInfo = async () => {
+  const fetchData = async () => {
     setIsLoading(true);
-    if (props.url) {
-      const result = await actions.getCharPlusInfo(props.url);
-      setCharPlusInfo(result);
+    try {
+      const [planet, charInfo] = await Promise.all([
+        props.homeworld ? actions.getPlanet(props.homeworld) : Promise.resolve(""),
+        props.url ? actions.getCharPlusInfo(props.url) : Promise.resolve({ vehicles: [], starships: [], species: [] }),
+      ]);
+  
+      setPlanetName(planet || "Unknown");
+      setCharPlusInfo(charInfo);
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setIsLoading(false);
     }
-    setIsLoading(false);
   };
-
+  
   useEffect(() => {
-    fetchPlanet();
-  }, [props.homeworld]);
-
-  useEffect(() => {
-    fetchCharPlusInfo();
-  }, [props.url]);
+    fetchData();
+  }, [props.homeworld, props.url]);
 
 
   const handleFav = () => {
@@ -138,10 +135,10 @@ export const PeopleDetails = (props) => {
           <div className="row details-plus-info">
             <div className=" col-5">
             <p>
-            <span className="fa-solid fa-caret-right arrow me-1"></span>
+            <span className="fa-solid fa-caret-right arrow me-2"></span>
                 {(() => {
                   if (isLoading) {
-                    return "Loading...";
+                    return "   Loading...";
                   }
                   if (charPlusInfo.species.length > 0) {
                     return charPlusInfo.species.join(", ");
@@ -187,4 +184,4 @@ export const PeopleDetails = (props) => {
       </div>
     </div>
   );
-};
+});
