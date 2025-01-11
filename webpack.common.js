@@ -39,9 +39,13 @@ module.exports = {
     extensions: ['*', '.js']
   },
   plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    // new ESLintPlugin({
+    //   files: path.resolve(__dirname, "src"),
+    // }),
     new HtmlWebpackPlugin({
+        favicon: 'favicon.ico',
         template: 'template.html'
     }),
-    new Dotenv({ safe: true, systemvars: true })
   ]
 };
