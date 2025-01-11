@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import ScrollToTop from "./component/scrollToTop";
+
 
 import { Home } from "./views/home.jsx";
 import { Details } from "./views/details.jsx";
@@ -19,13 +19,13 @@ const Layout = () => {
   return (
     <div style={{ cursor: `url(${cursor})16 16, auto` }}>
       <BrowserRouter basename={basename}>
-        <ScrollToTop>
+      
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/details/:type/:uid" element={<Details />}/>
             <Route path="*" element={<h1>Not found!</h1>} />
           </Routes>
-        </ScrollToTop>
+
       </BrowserRouter>
     </div>
   );
