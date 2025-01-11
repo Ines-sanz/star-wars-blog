@@ -6,7 +6,6 @@ const common = require('./webpack.common.js');
 const port = 3000;
 let publicUrl = `ws://localhost:${port}/ws`;
 
-
 module.exports = merge(common, {
     mode: 'development',
     devtool: 'cheap-module-source-map',
@@ -16,11 +15,15 @@ module.exports = merge(common, {
         allowedHosts: "all",
         historyApiFallback: true,
         static: {
-          directory: path.resolve(__dirname, "dist"),
+            directory: path.resolve(__dirname, "dist"),
         },
         client: {
-          webSocketURL: publicUrl
+            webSocketURL: publicUrl
         },
     },
-    plugins: []
+    plugins: [
+        new webpack.DefinePlugin({
+            'process.env.BASENAME': JSON.stringify(process.env.BASENAME || ""),
+        }),
+    ],
 });
