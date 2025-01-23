@@ -45,7 +45,7 @@ module.exports = {
     // }),
     new HtmlWebpackPlugin({
         favicon: 'favicon.ico',
-        template: 'template.html'
+        template: 'index.html'
     }),
   ]
 };
