@@ -2,18 +2,19 @@ import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { Context } from "../store/appContext";
 import { cloudinaryURLs } from "../../config/cloudinary";
-import { Navbar } from "../component/navbar.jsx";
 import { PeopleDetails } from "../component/peopleDetails.jsx";
 import { VehiclesDetails } from "../component/vehicleDetails.jsx";
 import { StarshipsDetails } from "../component/starshipsDetails.jsx";
-import { PlanetDetails } from "../component/planetDetails.jsx";
+
+import Pointer from "../../img/cursor-pointer.png";
 
 import "../../styles/detail.css";
 
 export const Details = () => {
   const { type, uid } = useParams();
   const { store, actions } = useContext(Context);
-  const [index, setIndex] = useState(null)
+  const [index, setIndex] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
   const backgroundImages = {
     people: cloudinaryURLs.peopleBg,
     vehicles: cloudinaryURLs.vehicBg,
@@ -21,45 +22,75 @@ export const Details = () => {
     planets: cloudinaryURLs.planetBg,
   };
 
-
   useEffect(() => {
     actions.clearSingle();
     actions.getSingle(type, uid);
-    if (store[type]) {
-      const findIndex = store[type].findIndex((item) => item.uid === uid);
-      setIndex(findIndex)
-      //borrar los console.log luego
-      console.log(index);
-      console.log(store[type]);
-    }
-  }, [type, uid, store[type], index]);
+  }, [type, uid]);
 
   useEffect(() => {
-    console.log("El índice ha cambiado:", index);
-  }, [index]);
+    if (store[type] && Array.isArray(store[type])) {
+      const findIndex = store[type].findIndex((item) => item.uid === uid);
+      setIndex(findIndex);
+    }
+  }, [store[type], uid]);
 
+  const handleNext = () => {
+    if (index + 1 < store[type]?.length) {
+      const newIndex = index + 1;
+      const newUid = store[type][newIndex]?.uid;
 
-  if (!store.details || !store.details.properties) {
-    return <div
-    style={{
-      backgroundImage: `url(${backgroundImages[type]})`, backgroundSize: `cover`, height: `100vh`    } } className="details-container d-flex justify-content-center align-items-center loading-div"
-  >Loading...</div>;
+      setIsLoading(true); // Mostrar pantalla de carga
+      actions.getSingle(type, newUid); // Cargar datos inmediatamente
+
+      setIndex(newIndex); // Actualizamos el índice
+      setTimeout(() => {
+        setIsLoading(false); // Ocultar pantalla de carga después de 4 segundos
+      }, 4000);
+    }
+  };
+
+  const handlePrevious = () => {
+    if (index - 1 >= 0) {
+      const newIndex = index - 1;
+      const newUid = store[type][newIndex]?.uid;
+
+      setIsLoading(true); // Mostrar pantalla de carga
+      actions.getSingle(type, newUid); // Cargar datos inmediatamente
+
+      setIndex(newIndex); // Actualizamos el índice
+      setTimeout(() => {
+        setIsLoading(false); // Ocultar pantalla de carga después de 4 segundos
+      }, 4000);
+    }
+  };
+
+  if (isLoading || !store.details || !store.details.properties) {
+    return (
+      <div
+        style={{
+          backgroundImage: `url(${backgroundImages[type]})`,
+          backgroundSize: `cover`,
+         minHeight: `100vh`
+        }}
+        className="details-container d-flex justify-content-center align-items-center loading-div"
+      >
+        Loading...
+      </div>
+    );
   }
-
-  
   return (
     <>
       <div
-        className="details-container d-flex justify-content-center"
+        className="details-container d-flex justify-content-center align-content-center"
         style={{
-          backgroundImage: `url(${backgroundImages[type]})`, backgroundSize: `cover`
+          backgroundImage: `url(${backgroundImages[type]})`, backgroundSize: `cover`,   minHeight: `100vh`
         }}
       >
   
-  <div className="container d-flex justify-content-between ">
-  <span class="fa-solid fa-chevron-left button-details-left"></span>
-  <span class="fa-solid fa-chevron-right button-details-right"></span>
-  </div>
+ 
+  <span class="fa-solid fa-chevron-left button-details-left" style={{ cursor: `url(${Pointer}) 16 16, auto`}} onClick={handlePrevious}></span>
+  <span class="fa-solid fa-chevron-right button-details-right"  style={{ cursor: `url(${Pointer}) 16 16, auto`}} onClick={handleNext}></span>
+  
         {type === "people" && (
           <PeopleDetails
             name={store.details?.properties?.name}
@@ -67,7 +98,7 @@ export const Details = () => {
             key={uid}
             uid={uid}
             type={type}
-            img={`https://starwars-visualguide.com/assets/img/characters/${uid}.jpg`}
+            img={`https://starwars-visualguide.com/assets/img/characters/${store[type]?.[index]?.uid}.jpg`}
             height={store.details?.properties?.height}
             mass={store.details?.properties?.mass}
             hair_color={store.details?.properties?.hair_color}
@@ -84,7 +115,7 @@ export const Details = () => {
             key={uid}
             uid={uid}
             type={type}
-            img={`https://starwars-visualguide.com/assets/img/vehicles/${uid}.jpg`}
+            img={`https://starwars-visualguide.com/assets/img/vehicles/${store[type]?.[index]?.uid}.jpg`}
             name={store.details.properties?.name}
             model={store.details.properties?.model}
             vehicle_class={store.details.properties?.vehicle_class}
@@ -106,7 +137,7 @@ export const Details = () => {
             key={uid}
             uid={uid}
             type={type}
-            img={`https://starwars-visualguide.com/assets/img/starships/${uid}.jpg`}
+            img={`https://starwars-visualguide.com/assets/img/starships/${store[type]?.[index]?.uid}.jpg`}
             name={store.details.properties?.name}
             model={store.details.properties?.model}
             starship_class={store.details.properties?.starship_class}
@@ -130,7 +161,7 @@ export const Details = () => {
             key={uid}
             uid={uid}
             type={type}
-            img={`https://starwars-visualguide.com/assets/img/planets/${uid}.jpg`}
+            img={`https://starwars-visualguide.com/assets/img/planets/${store[type]?.[index]?.uid}.jpg`}
             diameter={store.details.properties?.diameter}
             rotation_period={store.details.properties?.rotation_period}
             orbital_period={store.details.properties?.orbital_period}
