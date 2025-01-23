@@ -3,8 +3,7 @@ import { Navigate, useNavigate } from "react-router";
 
 import "../../styles/navbar.css";
 
-import home from "../../img/home-icon.png";
-import logo from "../../img/logo.png";
+import { cloudinaryURLs } from "../../config/cloudinary";
 import Pointer from "../../img/cursor-pointer.png";
 import { Context } from "../store/appContext";
 
@@ -23,14 +22,14 @@ export const Navbar = () => {
     <div className="navbar fixed-top d-flex justify-content-between">
       <img
       style={{ cursor: `url(${Pointer}) 16 16, auto` }}
-        src={home}
+        src={cloudinaryURLs.home}
         alt="Home"
         className="home-icon"
         onClick={handleLinkHome}
       />
 
       <img
-        src={logo}
+        src={cloudinaryURLs.logo}
         alt="Home"
         className="navbar-logo"
         onClick={handleLinkHome}

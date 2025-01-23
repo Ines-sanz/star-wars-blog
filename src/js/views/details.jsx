@@ -1,9 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { useParams } from "react-router";
 import { Context } from "../store/appContext";
-import peopleBg from "../../img/bg-char.png";
-import vehicBg from "../../img/bg-vehic.png";
-import planetBg from "../../img/bg-planet.png";
+import { cloudinaryURLs } from "../../config/cloudinary";
 import { Navbar } from "../component/navbar.jsx";
 import { PeopleDetails } from "../component/peopleDetails.jsx";
 import { VehiclesDetails } from "../component/vehicleDetails.jsx";
@@ -16,10 +14,10 @@ export const Details = () => {
   const { type, uid } = useParams();
   const { store, actions } = useContext(Context);
   const backgroundImages = {
-    people: peopleBg,
-    vehicles: vehicBg,
-    starships: vehicBg,
-    planets: planetBg,
+    people: cloudinaryURLs.peopleBg,
+    vehicles: cloudinaryURLs.vehicBg,
+    starships: cloudinaryURLs.vehicBg,
+    planets: cloudinaryURLs.planetBg,
   };
 
 
@@ -43,7 +41,7 @@ export const Details = () => {
       <div
         className="details-container d-flex justify-content-center"
         style={{
-          backgroundImage: `url(${backgroundImages[type]})`,
+          backgroundImage: `url(${backgroundImages[type]})`, height: `100vh`
         }}
       >
   

@@ -2,13 +2,9 @@ import React, { useContext, useEffect } from "react";
 import { useState } from "react";
 import { Context } from "../store/appContext";
 
-import bgTop from "../../img/bg-top.jpg";
-import bgBottom from "../../img/bg-bottom.png";
-import starshipIcon from "../../img/starship-icon.png";
-import vehicleIcon from "../../img/vehicle-icon.png";
+import { cloudinaryURLs } from "../../config/cloudinary";
 import Pointer from "../../img/cursor-pointer.png";
-import Timeline1 from "../../img/timeline-1.png";
-import Timeline2 from "../../img/timeline-2.png";
+
 
 import "../../styles/home.css";
 
@@ -44,7 +40,7 @@ export const Home = () => {
   return (
     <>
       <Navbar />
-      <section className="my-bg" style={{ backgroundImage: `url(${bgTop})` }}>
+      <section className="my-bg" style={{ backgroundImage: `url(${cloudinaryURLs.bgTop})` }}>
         <div className="horizontal-scrollable">
           <div className="row flex-nowrap mx-4 pt-5">
             <div className="col-1 col-md-4 col-lg-3  m-3"></div>
@@ -82,19 +78,19 @@ export const Home = () => {
 
       <section
         className="my-bg-bottom pb-0"
-        style={{ backgroundImage: `url(${bgBottom})` }}
+        style={{ backgroundImage: `url(${cloudinaryURLs.bgBottom})` }}
       >
        
-<img src={Timeline1} alt="timeline" className="timeline img-fluid mb-2"/>
+<img src={cloudinaryURLs.Timeline1} alt="timeline" className="timeline img-fluid mb-2"/>
 
-<img src={Timeline2} alt="timeline" className="timeline img-fluid mt-2"/>
+<img src={cloudinaryURLs.Timeline2} alt="timeline" className="timeline img-fluid mt-2"/>
      
         
 
         <div className="d-flex ps-5 mt-5">
           <img
             style={{ cursor: `url(${Pointer}) 16 16, auto` }}
-            src={vehicleIcon}
+            src={cloudinaryURLs.vehicle}
             alt="vehicles"
             className={`home-icons ${
               selected === "vehicles" ? "selected" : "unselected"
@@ -104,7 +100,7 @@ export const Home = () => {
           />
           <img
             style={{ cursor: `url(${Pointer}) 16 16, auto` }}
-            src={starshipIcon}
+            src={cloudinaryURLs.starship}
             alt="starships"
             className={`home-icons ${
               selected === "starships" ? "selected" : "unselected"

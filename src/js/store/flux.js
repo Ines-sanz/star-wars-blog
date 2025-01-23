@@ -29,8 +29,10 @@ const getState = ({ getStore, getActions, setStore }) => {
     
                 url = data.next; 
             }
+            const shuffleArray = (array) => array.sort(() => Math.random() - 0.5);
+
     
-            setStore({ [type]: results });
+            setStore({ [type]: shuffleArray(results) });
         } catch (error) {
             console.error(error);
         }

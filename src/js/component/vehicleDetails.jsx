@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import "../../styles/detail.css";
 
-import credits from "../../img/credits-icon.png";
+import { cloudinaryURLs } from "../../config/cloudinary";
 import Pointer from "../../img/cursor-pointer.png";
 import { Context } from "../store/appContext";
 
@@ -64,7 +64,7 @@ export const VehiclesDetails = (props) => {
                   {props.cost_in_credits}{" "}
                   <span className="detail-subtitle">
                     {" "}
-                    <img className="people-icon" src={credits} alt="credits" />
+                    <img className="people-icon" src={cloudinaryURLs.credits} alt="credits" />
                   </span>
                 </p>
               </div>

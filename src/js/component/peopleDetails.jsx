@@ -5,8 +5,7 @@ import { useState, useEffect } from "react";
 import "../../styles/detail.css";
 import "../../styles/index.css";
 
-import starship from "../../img/starship-icon.png";
-import vehicle from "../../img/vehicle-icon.png";
+import { cloudinaryURLs } from "../../config/cloudinary";
 import Pointer from "../../img/cursor-pointer.png";
 
 
@@ -53,6 +52,7 @@ export const PeopleDetails = React.memo((props) => {
     (fav) => fav.uid === props.uid && fav.type === props.type
   );
   
+  console.log(store.people)
   return (
     <div className="col-12 col-lg-10 justify-content-center mt-3">
     <div className="p-3 glass row g-0 justify-content-center d-flex mx-0">
@@ -155,7 +155,7 @@ export const PeopleDetails = React.memo((props) => {
             </div>
             <div className="col-12 col-xl-7 mt-3 mt-xl-0">
               <p>
-                <img className="people-icon" src={vehicle} alt="vehicle"  />
+                <img className="people-icon" src={cloudinaryURLs.vehicle} alt="vehicle"  />
                 {(() => {
                   if (isLoading) {
                     return "Loading...";
@@ -167,7 +167,7 @@ export const PeopleDetails = React.memo((props) => {
                 })()}
               </p>
               <p>
-                <img className="people-icon" src={starship} alt="starship" />
+                <img className="people-icon" src={cloudinaryURLs.starship} alt="starship" />
                 {(() => {
                   if (isLoading) {
                     return "Loading...";

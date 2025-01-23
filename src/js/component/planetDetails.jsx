@@ -1,8 +1,6 @@
 import React, { useContext } from "react";
 import "../../styles/detail.css";
-import rotation from "../../img/rota-icon.png";
-import orbital from "../../img/orbital-icon.png";
-import diameter from "../../img/diameter-icon.png";
+import { cloudinaryURLs } from "../../config/cloudinary";
 import Pointer from "../../img/cursor-pointer.png";
 import { Context } from "../store/appContext";
 
@@ -84,7 +82,7 @@ export const PlanetDetails = (props) => {
           
           <div className="col-12 col-xl-6 d-flex align-content-center">
            
-            <p className="planet-info"> <img src={rotation} alt="" className="people-icon"/>
+            <p className="planet-info"> <img src={cloudinaryURLs.rotation} alt="" className="people-icon"/>
                   <span className="detail-subtitle">
                  Rotation P.   {" "}
                   </span>
@@ -93,7 +91,7 @@ export const PlanetDetails = (props) => {
           </div>
           <div className="col-12 col-xl-6 d-flex align-content-center">
            
-            <p className="planet-info"> <img src={orbital} alt="" className="people-icon"/>
+            <p className="planet-info"> <img src={cloudinaryURLs.orbital} alt="" className="people-icon"/>
                   <span className="detail-subtitle">
                  Orbital P.   {" "}
                   </span>
@@ -103,7 +101,7 @@ export const PlanetDetails = (props) => {
           <div className="col-12 col-xl-6 d-flex align-content-center">
           <p className="planet-info">
                   <span className="detail-subtitle">
-                  <img src={diameter} alt="" className="people-icon"/>{" "}
+                  <img src={cloudinaryURLs.diameter} alt="" className="people-icon"/>{" "}
                     Diameter:{" "}
                   </span>
                   {props.diameter} <span className="detail-subtitle">m</span>
