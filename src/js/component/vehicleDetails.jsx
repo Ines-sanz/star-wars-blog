@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import "../../styles/detail.css";
 
 import { cloudinaryURLs } from "../../config/cloudinary";
-import Pointer from "../../img/cursor-pointer.png";
 import { Context } from "../store/appContext";
 
 export const VehiclesDetails = (props) => {
@@ -33,7 +32,7 @@ export const VehiclesDetails = (props) => {
             <h3>{props.name}</h3>
             <span
                 className="fa-solid fa-star general-icon"
-                style={{ cursor: `url(${Pointer}) 16 16, auto`,opacity: isFavorite ? 1 : 0.4, }}  onClick={handleFav}
+                style={{ cursor: `url(${cloudinaryURLs.pointer}) 16 16, auto`,opacity: isFavorite ? 1 : 0.4, }}  onClick={handleFav}
               ></span>
           </div>
           <div className="detail-glass col-12 col-lg-11 ps-4 p-3 text-start">

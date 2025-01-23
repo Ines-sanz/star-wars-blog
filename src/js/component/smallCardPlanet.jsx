@@ -2,8 +2,8 @@ import React, { useContext } from "react";
 import { Navigate, useNavigate } from "react-router";
 import "../../styles/index.css";
 import "../../styles/smallCard.css";
-import Pointer from "../../img/cursor-pointer.png";
 import { Context } from "../store/appContext";
+import { cloudinaryURLs } from "../../config/cloudinary";
 
 export const PlanetChar = (props) => {
   const {store, actions} = useContext(Context)
@@ -33,7 +33,7 @@ const isFavorite = store.favorites.some(
               <h3 className="small-card-title overflow-hidden" onClick={handleLink}>{props.name}</h3>
               <span
                 className="fa-solid fa-star general-icon"
-                style={{ cursor: `url(${Pointer}) 16 16, auto`,opacity: isFavorite ? 1 : 0.4, }}  onClick={handleFav}
+                style={{ cursor: `url(${cloudinaryURLs.pointer}) 16 16, auto`,opacity: isFavorite ? 1 : 0.4, }}  onClick={handleFav}
               ></span>
             </div>
           </figure>

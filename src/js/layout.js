@@ -6,7 +6,7 @@ import { Home } from "./views/home.jsx";
 import { Details } from "./views/details.jsx";
 import injectContext from "./store/appContext";
 
-import cursor from "../img/cursor-icon.png"
+import { cloudinaryURLs } from "../config/cloudinary.js"
 import { Navbar } from "./component/navbar.jsx";
 
 
@@ -18,7 +18,7 @@ const Layout = () => {
   const basename = process.env.BASENAME || "";
 
   return (
-    <div style={{ cursor: `url(${cursor})16 16, auto` }}>
+    <div style={{ cursor: `url(${cloudinaryURLs.cursor})16 16, auto` }}>
       <BrowserRouter basename={basename}>
       <Navbar/>
           <Routes>

@@ -13,5 +13,7 @@ export const cloudinaryURLs = {
     Timeline1: "https://res.cloudinary.com/dtr9ffwyc/image/upload/v1737562836/timeline-1_rjrkae.png",
     Timeline2: "https://res.cloudinary.com/dtr9ffwyc/image/upload/v1737562872/timeline-2_hxm56u.png",
     bgTop: "https://res.cloudinary.com/dtr9ffwyc/image/upload/v1737562420/bg-top_i0vg8a.jpg",
-    bgBottom: "https://res.cloudinary.com/dtr9ffwyc/image/upload/v1737562418/bg-bottom_nyuxrc.png"
+    bgBottom: "https://res.cloudinary.com/dtr9ffwyc/image/upload/v1737562418/bg-bottom_nyuxrc.png",
+    cursor: "https://res.cloudinary.com/dtr9ffwyc/image/upload/v1737668164/cursor-icon_tvt7zr.png",
+    pointer: "https://res.cloudinary.com/dtr9ffwyc/image/upload/v1737668164/cursor-pointer_yy87zp.png"
 };

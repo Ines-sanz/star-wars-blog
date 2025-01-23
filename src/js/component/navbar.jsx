@@ -4,7 +4,6 @@ import { Navigate, useNavigate } from "react-router";
 import "../../styles/navbar.css";
 
 import { cloudinaryURLs } from "../../config/cloudinary";
-import Pointer from "../../img/cursor-pointer.png";
 import { Context } from "../store/appContext";
 
 
@@ -21,7 +20,7 @@ export const Navbar = () => {
   return (
     <div className="navbar fixed-top d-flex justify-content-between">
       <img
-      style={{ cursor: `url(${Pointer}) 16 16, auto` }}
+      style={{ cursor: `url(${cloudinaryURLs.pointer}) 16 16, auto` }}
         src={cloudinaryURLs.home}
         alt="Home"
         className="home-icon"
@@ -37,7 +36,7 @@ export const Navbar = () => {
 
       <div className="dropdown me-2" >
         <a
-        style={{ cursor: `url(${Pointer}) 16 16, auto` }}
+        style={{ cursor: `url(${cloudinaryURLs.pointer}) 16 16, auto` }}
           className="btn nav-button dropdown-toggle"
           href="#"
           role="button"

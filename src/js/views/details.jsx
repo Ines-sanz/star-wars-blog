@@ -5,8 +5,9 @@ import { cloudinaryURLs } from "../../config/cloudinary";
 import { PeopleDetails } from "../component/peopleDetails.jsx";
 import { VehiclesDetails } from "../component/vehicleDetails.jsx";
 import { StarshipsDetails } from "../component/starshipsDetails.jsx";
+import { PlanetDetails } from "../component/planetDetails.jsx";
 
-import Pointer from "../../img/cursor-pointer.png";
+
 
 import "../../styles/detail.css";
 
@@ -88,8 +89,8 @@ export const Details = () => {
       >
   
  
-  <span class="fa-solid fa-chevron-left button-details-left" style={{ cursor: `url(${Pointer}) 16 16, auto`}} onClick={handlePrevious}></span>
-  <span class="fa-solid fa-chevron-right button-details-right"  style={{ cursor: `url(${Pointer}) 16 16, auto`}} onClick={handleNext}></span>
+  <span class="fa-solid fa-chevron-left button-details-left" style={{ cursor: `url(${cloudinaryURLs.Pointer}) 16 16, auto`}} onClick={handlePrevious}></span>
+  <span class="fa-solid fa-chevron-right button-details-right"  style={{ cursor: `url(${cloudinaryURLs.Pointer}) 16 16, auto`}} onClick={handleNext}></span>
   
         {type === "people" && (
           <PeopleDetails
