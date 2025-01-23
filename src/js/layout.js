@@ -7,6 +7,7 @@ import { Details } from "./views/details.jsx";
 import injectContext from "./store/appContext";
 
 import cursor from "../img/cursor-icon.png"
+import { Navbar } from "./component/navbar.jsx";
 
 
 
@@ -19,7 +20,7 @@ const Layout = () => {
   return (
     <div style={{ cursor: `url(${cursor})16 16, auto` }}>
       <BrowserRouter basename={basename}>
-      
+      <Navbar/>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/details/:type/:uid" element={<Details />}/>

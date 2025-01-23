@@ -52,9 +52,8 @@ export const PeopleDetails = React.memo((props) => {
     (fav) => fav.uid === props.uid && fav.type === props.type
   );
   
-  console.log(store.people)
   return (
-    <div className="col-12 col-lg-10 justify-content-center mt-3">
+    <div className="col-11 col-lg-10 justify-content-center mt-3">
     <div className="p-3 glass row g-0 justify-content-center d-flex mx-0">
       <figure className="col-11 col-xl-4 text-center text-xl-end">
         <img
@@ -63,7 +62,7 @@ export const PeopleDetails = React.memo((props) => {
           alt={props.name}
         />
       </figure>
-        <div className="col-12 col-xl-7 ms-lg-5 ms-0 ms-xl-0">
+        <div className="col-12 col-xl-7 ms-lg-5 ms-0 ms-xl-0 ">
           <div className="detail-title col-12 col-lg-11 d-flex justify-content-between px-4 mt-2">
             <h3>{props.name}</h3>
             <span

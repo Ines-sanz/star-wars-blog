@@ -31,7 +31,7 @@ const getState = ({ getStore, getActions, setStore }) => {
             }
             const shuffleArray = (array) => array.sort(() => Math.random() - 0.5);
 
-    
+            
             setStore({ [type]: shuffleArray(results) });
         } catch (error) {
             console.error(error);

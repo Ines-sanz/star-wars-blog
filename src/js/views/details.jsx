@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { Context } from "../store/appContext";
 import { cloudinaryURLs } from "../../config/cloudinary";
@@ -13,6 +13,7 @@ import "../../styles/detail.css";
 export const Details = () => {
   const { type, uid } = useParams();
   const { store, actions } = useContext(Context);
+  const [index, setIndex] = useState(null)
   const backgroundImages = {
     people: cloudinaryURLs.peopleBg,
     vehicles: cloudinaryURLs.vehicBg,
@@ -24,27 +25,41 @@ export const Details = () => {
   useEffect(() => {
     actions.clearSingle();
     actions.getSingle(type, uid);
-  }, [type, uid]);
+    if (store[type]) {
+      const findIndex = store[type].findIndex((item) => item.uid === uid);
+      setIndex(findIndex)
+      //borrar los console.log luego
+      console.log(index);
+      console.log(store[type]);
+    }
+  }, [type, uid, store[type], index]);
+
+  useEffect(() => {
+    console.log("El índice ha cambiado:", index);
+  }, [index]);
+
 
   if (!store.details || !store.details.properties) {
     return <div
     style={{
-      backgroundImage: `url(${backgroundImages[type]})`, height: `100vh`
-    } } className="details-container d-flex justify-content-center align-items-center loading-div"
+      backgroundImage: `url(${backgroundImages[type]})`, backgroundSize: `cover`, height: `100vh`    } } className="details-container d-flex justify-content-center align-items-center loading-div"
   >Loading...</div>;
   }
 
-
+  
   return (
     <>
-      <Navbar />
       <div
         className="details-container d-flex justify-content-center"
         style={{
-          backgroundImage: `url(${backgroundImages[type]})`, height: `100vh`
+          backgroundImage: `url(${backgroundImages[type]})`, backgroundSize: `cover`
         }}
       >
   
+  <div className="container d-flex justify-content-between ">
+  <span class="fa-solid fa-chevron-left button-details-left"></span>
+  <span class="fa-solid fa-chevron-right button-details-right"></span>
+  </div>
         {type === "people" && (
           <PeopleDetails
             name={store.details?.properties?.name}

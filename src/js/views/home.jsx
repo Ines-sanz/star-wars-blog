@@ -37,9 +37,9 @@ export const Home = () => {
   const toggleSelected = (id) => {
     setSelected(id);
   };
+
   return (
     <>
-      <Navbar />
       <section className="my-bg" style={{ backgroundImage: `url(${cloudinaryURLs.bgTop})` }}>
         <div className="horizontal-scrollable">
           <div className="row flex-nowrap mx-4 pt-5">
@@ -81,9 +81,9 @@ export const Home = () => {
         style={{ backgroundImage: `url(${cloudinaryURLs.bgBottom})` }}
       >
        
-<img src={cloudinaryURLs.Timeline1} alt="timeline" className="timeline img-fluid mb-2"/>
+<img src={cloudinaryURLs.Timeline1} alt="timeline" className="timeline img-fluid mb-2 small-d-none"/>
 
-<img src={cloudinaryURLs.Timeline2} alt="timeline" className="timeline img-fluid mt-2"/>
+<img src={cloudinaryURLs.Timeline2} alt="timeline" className="timeline img-fluid mt-2 small-d-none"/>
      
         
 

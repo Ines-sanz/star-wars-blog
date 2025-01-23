@@ -1,9 +1,10 @@
 .details-container{
- 
+    position: relative;
     background-size: cover;
     background-position: bottom right;
     background-repeat: no-repeat;
     padding: 10% 5%;
+    text-align: center;
 }
 
 .detail-img{
@@ -17,6 +18,8 @@
  margin-bottom: -16px;
  position: relative;
 }
+
+
 
 .detail-title{
     text-transform: uppercase;
@@ -127,4 +130,21 @@
   font-weight: 100;
   color: rgba(255, 255, 255, 0.5);
   font-size: 5vw;
+}
+.button-details-left{
+position: absolute;
+top: 50%;
+left: 3%;
+font-size: 40px;
+color: rgba(255, 255, 255, 0.5);
+  z-index: 2;
+}
+
+.button-details-right{
+  position: absolute;
+top: 50%;
+right: 3%;
+  font-size: 40px;
+  color: rgba(255, 255, 255, 0.5);
+  z-index: 2;
 }
