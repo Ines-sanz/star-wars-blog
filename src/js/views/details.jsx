@@ -89,8 +89,8 @@ export const Details = () => {
       >
   
  
-  <span class="fa-solid fa-chevron-left button-details-left" style={{ cursor: `url(${cloudinaryURLs.Pointer}) 16 16, auto`}} onClick={handlePrevious}></span>
-  <span class="fa-solid fa-chevron-right button-details-right"  style={{ cursor: `url(${cloudinaryURLs.Pointer}) 16 16, auto`}} onClick={handleNext}></span>
+  <span class="fa-solid fa-chevron-left button-details-left" style={{ cursor: `url(${cloudinaryURLs.pointer}) 16 16, auto`}} onClick={handlePrevious}></span>
+  <span class="fa-solid fa-chevron-right button-details-right"  style={{ cursor: `url(${cloudinaryURLs.pointer}) 16 16, auto`}} onClick={handleNext}></span>
   
         {type === "people" && (
           <PeopleDetails

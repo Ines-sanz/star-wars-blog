@@ -87,7 +87,7 @@ export const Home = () => {
 
         <div className="d-flex ps-5 mt-5">
           <img
-            style={{ cursor: `url(${cloudinaryURLs.Pointer}) 16 16, auto` }}
+            style={{ cursor: `url(${cloudinaryURLs.pointer}) 16 16, auto` }}
             src={cloudinaryURLs.vehicle}
             alt="vehicles"
             className={`home-icons ${
@@ -97,7 +97,7 @@ export const Home = () => {
             onClick={() => toggleSelected("vehicles")}
           />
           <img
-            style={{ cursor: `url(${cloudinaryURLs.Pointer}) 16 16, auto` }}
+            style={{ cursor: `url(${cloudinaryURLs.pointer}) 16 16, auto` }}
             src={cloudinaryURLs.starship}
             alt="starships"
             className={`home-icons ${
