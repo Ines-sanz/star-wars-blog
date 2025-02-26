@@ -36,3 +36,7 @@ To get started with this project, follow these steps:
 
 ### `npm install`
 ### `npm run start`
+
+🚨 Unfortunately, the API that hosted the images has been deleted, so the website is not displaying as expected.  
+To see how it was supposed to look, check it out [here](https://www.ines-sanz.com/fullstack/star-wars/).  
+Of course, you can still check out the code and see how it was built! :)
